@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
 import { jwtDecode } from "jwt-decode";
 import HeaderAdmin from "../component/HeaderAdmin";
+import { useVerifyIfUserIsLogged } from "./../utils/security-utils";
 
 
 
 const AdminManageUser = () => {
-
+  useVerifyIfUserIsLogged();
   const [users, setUsers] = useState(null);
   const token = localStorage.getItem("jwt");
   const decodedToken = jwtDecode(token);
@@ -15,17 +16,12 @@ const AdminManageUser = () => {
   // Requête Fetch pour récupérer (get) tous les utilisateurs
   useEffect(() => {
     (async () => {
-      try {
+     
         const usersResponse = await fetch("http://localhost:3000/api/users");
-  
-        if (!usersResponse.ok) {
-          throw new Error(`Erreur lors de la récupération des utilisateurs: ${usersResponse.status}`);
-        }  
+   
         const usersResponseData = await usersResponse.json();
         setUsers(usersResponseData);
-      } catch (error) {
-        console.error("Une erreur s'est produite lors de la récupération des utilisateurs:", error.message);
-      }
+
     })();
   }, []);
 
@@ -33,14 +29,19 @@ const AdminManageUser = () => {
 
   // Requête fetch pour supprimer un utilisateur
   const handleDeleteUsers = async (event, usersId) => {
-    await fetch("http://localhost:3000/api/users/" + usersId, {
-      method: "DELETE",
-      headers: { Authorization: "Bearer " + token }
-    })
-    const usersResponse = await fetch("http://localhost:3000/api/users");
-    const usersResponseData = await usersResponse.json();
-    setUsers(usersResponseData)
-  }
+    try {
+      await fetch("http://localhost:3000/api/users/" + usersId, {
+        method: "DELETE",
+        headers: { Authorization: "Bearer " + token }
+      });
+      
+      const usersResponse = await fetch("http://localhost:3000/api/users");
+      const usersResponseData = await usersResponse.json();
+      setUsers(usersResponseData);
+    } catch (error) {
+      console.error("Error deleting user:", error);
+    }
+  };
 
   return (
     <body>
