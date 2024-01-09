@@ -2,14 +2,14 @@
 import { useEffect, useState } from "react";
 import { jwtDecode } from "jwt-decode";
 import HeaderAdmin from "../component/HeaderAdmin";
-
+import { useVerifyIfUserIsLogged } from "./../utils/security-utils";
 
 
 const Admin = () => {
-
+  useVerifyIfUserIsLogged();
   const [fictions, setFictions] = useState(null);
   const token = localStorage.getItem("jwt");
-  const decodedToken = jwtDecode(token);
+  
  
 
   
@@ -31,6 +31,8 @@ const Admin = () => {
 
 
   const handleDeleteFictions = async (event, fictionId) => {
+    if (token) {
+    const decodedToken = jwtDecode(token);
     await fetch("http://localhost:3000/api/fanfics/" + fictionId, {
       method: "DELETE",
       headers: { Authorization: "Bearer " + token }
@@ -38,7 +40,7 @@ const Admin = () => {
     const fictionsResponse = await fetch("http://localhost:3000/api/fanfics");
     const fictionsResponseData = await fictionsResponse.json();
     setFictions(fictionsResponseData)
-  }
+  }}
 
 
 

@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 const HeaderUsers = () => {
 
-
+    
     const navigate = useNavigate();
 
     const handleLogout = () => {
@@ -12,6 +12,10 @@ const HeaderUsers = () => {
   
       // redirige l'utilisateur vers la page de login
       navigate("/login");
+
+ 
+
+
     };
 
     return(

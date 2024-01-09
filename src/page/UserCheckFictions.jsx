@@ -1,85 +1,74 @@
 import React, { useState, useEffect } from 'react';
 import HeaderUsers from "../component/HeaderUsers";
+import { useParams } from "react-router-dom";
 
-const UserCheckFictions = () => {
-  const [fictions, setFictions] = useState(null);
-  const [selectedFictionId, setSelectedFictionId] = useState(null);
-  const [currentUser, setCurrentUser] = useState(null);
+
+const UserFictionsPage = () => {
+  const [fictions, setFictions] = useState([]);
+  const [user, setUser] = useState(null);
+  const { id } = useParams();
+
+
+
 
   useEffect(() => {
-    const fetchUserInfo = async () => {
+    (async () => {
+      const userResponse = await fetch(`http://localhost:3000/api/users/${id}`);
+      const userResponseData = await userResponse.json();
+      setUser(userResponseData);
+      console.log(userResponseData)
+
+    })();
+  }, [id]);
+
+
+
+  useEffect(() => {
+    const fetchUserFictions = async () => {
       try {
-        const token = /* récupérer le token JWT stocké côté client */ "votre_token_jwt";
-        const userInfoResponse = await fetch("http://localhost:3000/api/users/info", {
-          headers: {
-            Authorization: `Bearer ${token}`
-          }
-        });
-        const userInfoData = await userInfoResponse.json();
-        setCurrentUser(userInfoData.data.userId);
+        const response = await fetch('http://localhost:3000/api/fanfics'); // Ajustez l'URL de l'API en conséquence
+        const data = await response.json();
+        setFictions(data);
       } catch (error) {
-        console.error('Erreur lors de la récupération des informations de l\'utilisateur:', error);
+        console.error('Erreur lors de la récupération des fictions de l\'utilisateur :', error);
       }
     };
 
-    fetchUserInfo();
+    fetchUserFictions();
   }, []);
 
-  useEffect(() => {
-    const fetchFictions = async () => {
-      try {
-        const fictionsResponse = await fetch("http://localhost:3000/api/fanfics");
-        const fictionsResponseData = await fictionsResponse.json();
-
-        // Filtrer les fictions pour n'inclure que celles de l'utilisateur actuel
-        const userFictions = fictionsResponseData.filter(fiction => fiction.UserId === currentUser);
-
-        // Tri des fictions par date de création (createdAt)
-        const sortedFictions = userFictions.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
-        setFictions(sortedFictions);
-      } catch (error) {
-        console.error('Erreur lors de la récupération des fictions:', error);
-      }
-    };
-
-    if (currentUser) {
-      fetchFictions();
-    }
-  }, [currentUser]);
-
-  const handleFictionClick = (fictionId) => {
-    setSelectedFictionId(fictionId);
-  };
-
   return (
-    <>
-      <body>
-        <main>
-          <div className="main_rectangle">
-            <HeaderUsers />
-            <section>
-              <h1>Liste des Fictions:</h1>
-              <ul>
-                {fictions ? (
-                  <>
-                    {fictions.map((fiction) => (
-                      <article key={fiction.id}>
-                        <button onClick={() => handleFictionClick(fiction.id)}>
-                          <h3>{fiction.fictionname}</h3>
-                        </button>
+    <body>
+      <main>
+        <div className="main_rectangle">
+        <HeaderUsers />
+      <h1>Fictions de l'utilisateur</h1>
+      <ul>
+      {fictions ? (
+                <div>
+                  {fictions
+                    .filter((fiction) => fiction.UserId === user.id)
+                    .map((fiction) => (
+                      <article className="reviewContent" key={fiction.id}>
+                        {console.log(fiction)}
+
                       </article>
                     ))}
-                  </>
-                ) : (
-                  <p>En cours de chargement</p>
-                )}
-              </ul>
-            </section>
-          </div>
-        </main>
-      </body>
-    </>
+                </div>
+              ) : (
+                <p>En cours de chargement</p>
+              )}
+        {/* {fictions.map((fiction) => (
+
+          <li key={fiction.id}>
+            <p>Titre : {fiction.fictionname}</p>
+          </li>
+        ))} */}
+      </ul>
+    </div>
+    </main>
+    </body>
   );
 };
 
-export default UserCheckFictions;
+export default UserFictionsPage;
