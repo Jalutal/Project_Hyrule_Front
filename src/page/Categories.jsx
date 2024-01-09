@@ -48,7 +48,7 @@ const Categories = () => {
                   {uniqueCategories.map((category, index) => (
                     <article key={index}>
                       <button onClick={() => handleCategoryClick(index)}>
-                        <h3>{category}</h3>
+                        <h3 className="button_cat">{category}</h3>
                       </button>
                     </article>
                   ))}

@@ -203,10 +203,12 @@ a.nav-link::before {
 }
 
 .footer div {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
     text-align: center;
-    margin: auto;
-    margin-top: 160px;
-    width: 5%;
     
 }
 .bloc_main {
@@ -260,10 +262,15 @@ a.nav-link_footer {
 }
 
 .content-container {
-    display: flex;    
+    display: flex;
     width: 95%;
     padding-left: 15px;
     gap: 55px;
+    overflow: auto; 
+}
+
+.content-container section {
+    flex-basis: 8%;
 }
 
 .content-container button {
@@ -272,10 +279,14 @@ a.nav-link_footer {
     border-radius: 10px;
     margin-bottom: 5px;
     margin-top: 5px;
+    max-height: 100px; 
+    overflow: hidden; 
 }
 
 .content-container h3 {
     font-family: "Hylia";
+    overflow: hidden; 
+    white-space: nowrap; /* Empêche le texte de passer à la ligne */
 }
 
 .div_admin {
@@ -286,4 +297,79 @@ a.nav-link_footer {
 .container_admin {
     display: flex;
     flex-direction: row;
+}
+
+.adminLogout {
+    color: antiquewhite;
+    background-color: black;
+    box-shadow: 5px 5px 5px black;
+    border-radius: 10px;
+    padding-top: 3px;
+
+}
+
+.adminLogout:hover {
+    color: black;
+    background-color: antiquewhite;
+    box-shadow: 5px 5px 5px antiquewhite;
+    border-radius: 10px;
+    padding-top: 3px;
+
+}
+
+.dash_user {
+    text-align: center;
+    font-size: 1.7em;
+}
+
+.content_mentions {
+    list-style-type: none;
+}
+
+.form {
+    text-align: center;  
+    width: 30%;
+    margin: auto;  
+}
+
+.form_contact {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.form_contact input{
+        width: 300px; /* Définir la largeur */
+        height: 30px; /* Définir la hauteur */
+}
+
+.form_contact textarea{
+    width: 300px; /* Définir la largeur */
+    height: 80px; /* Définir la hauteur */
+}
+
+.form_align {
+    margin: 10px;
+}
+
+.button_cat {
+    font-family: "Hylia";
+    overflow: hidden; 
+    white-space: nowrap; /* Empêche le texte de passer à la ligne */
+    height: 40px; /* Définissez la hauteur souhaitée */
+    margin: 0; /* Réinitialisez les marges pour un aspect plus uniforme */
+    padding: 5px; /* Ajoutez un peu de rembourrage pour l'apparence */
+    display: flex; /* Utilisez flexbox */
+    align-items: center; /* Centre le texte verticalement */
+}
+
+.button_cat_detail {
+    font-family: "Hylia";
+    white-space: nowrap; /* Empêche le texte de passer à la ligne */
+    height: 20px; /* Définissez la hauteur souhaitée */
+    margin: 0; /* Réinitialisez les marges pour un aspect plus uniforme */
+    padding: 5px; /* Ajoutez un peu de rembourrage pour l'apparence */
+    display: flex; /* Utilisez flexbox */
+    align-items: center; /* Centre le texte verticalement */
 }

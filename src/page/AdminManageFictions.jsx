@@ -1,35 +1,30 @@
-
 import { useEffect, useState } from "react";
 import { jwtDecode } from "jwt-decode";
 import HeaderAdmin from "../component/HeaderAdmin";
+import { useVerifyIfUserIsLogged } from "./../utils/security-utils";
 
 
 
 const AdminManageFictions = () => {
-
+  useVerifyIfUserIsLogged();
   const [fictions, setFictions] = useState(null);
   const token = localStorage.getItem("jwt");
   const decodedToken = jwtDecode(token);
  
 
   
-  
-
+  // Requête Fetch pour récupérer (get) toutes les fictions
   useEffect(() => {
-    const fetchFictions = async () => {
-      try {
-        const fictionsResponse = await fetch("http://localhost:3000/api/fanfics");
-        const fictionsResponseData = await fictionsResponse.json();
-        setFictions(fictionsResponseData);
-      } catch (error) {
-        console.error('Erreur lors de la récupération des fictions:', error);
-      }
-    };
-
-    fetchFictions();
+    (async () => {     
+      const fictionsResponse = await fetch("http://localhost:3000/api/fanfics");   
+      const fictionsResponseData = await fictionsResponse.json();
+      setFictions(fictionsResponseData);
+    })();
   }, []);
 
 
+
+  // Requête fetch pour supprimer une fiction
   const handleDeleteFictions = async (event, fictionId) => {
     await fetch("http://localhost:3000/api/fanfics/" + fictionId, {
       method: "DELETE",
@@ -64,7 +59,7 @@ const AdminManageFictions = () => {
             return(
               <article>
                 <h2>{fiction.fictionname}</h2>
-                {decodedToken.data.RoleId !== 3 && (
+                {decodedToken.data.role !== 2 && (
                   <button onClick={(event) => handleDeleteFictions(event, fiction.id)}>Supprimer: {fiction.fictionname}</button>
                 )}
               </article>

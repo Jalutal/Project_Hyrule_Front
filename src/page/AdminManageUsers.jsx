@@ -15,13 +15,10 @@ const AdminManageUser = () => {
   
   // Requête Fetch pour récupérer (get) tous les utilisateurs
   useEffect(() => {
-    (async () => {
-     
-        const usersResponse = await fetch("http://localhost:3000/api/users");
-   
+    (async () => {     
+        const usersResponse = await fetch("http://localhost:3000/api/users");   
         const usersResponseData = await usersResponse.json();
         setUsers(usersResponseData);
-
     })();
   }, []);
 
@@ -59,7 +56,7 @@ const AdminManageUser = () => {
               <article>
                 <h2>{user.username}</h2>
                 <p>{user.id}</p>
-                {decodedToken.data.RoleId !== 3 && (
+                {decodedToken.data.role !== 2 && (
                   <button onClick={(event) => handleDeleteUsers(event, user.id)}>Supprimer: {user.username}</button>
                 )}
               </article>

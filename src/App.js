@@ -15,6 +15,7 @@ import UserCheckFictions from './page/UserCheckFictions';
 import AdminManageUser from './page/AdminManageUsers';
 import AdminManageFictions from './page/AdminManageFictions';
 import UserManageInfos from './page/UserManageInfos';
+import MentionsLegales from './page/MentionsLegales';
 
 
 function App() {
@@ -31,7 +32,7 @@ function App() {
         <Route path="/newfic" element={<NewFictions />} />
         <Route path="/contact" element={<ContactsPage />} />
         <Route path="/categories" element={<Categories />} />
-
+        <Route path="/mentionslegales" element={<MentionsLegales />} />
 
         <Route path="/admin" element={<Admin />} />
         <Route path="/admin/manageusers" element={<AdminManageUser />} />

@@ -45,7 +45,7 @@ const CategoriesDetail = ({ category }) => {
           {categoryFictions.map((fiction) => (
             <article key={fiction.id}>
               <button onClick={() => handleFictionClick(fiction.id)}>
-                <h3>{fiction.fictionname}</h3>
+                <h3 className='button_cat_detail'>{fiction.fictionname}</h3>
               </button>
             </article>
           ))}
