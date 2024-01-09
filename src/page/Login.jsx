@@ -45,6 +45,7 @@ const Login = () => {
             <Header />
             {message && <p>{message}</p>}
       <form onSubmit={handleLogin} className="login_form">
+      <h2 className="login_create">Identifiez-vous :</h2>
         <label>
           Username : 
           <input type="text" name="username" />
@@ -56,6 +57,7 @@ const Login = () => {
         <img src="/assets/img/sticker-zelda-sheikah-logo-02-removebg-preview.png" alt="Connexion" />
         <input type="submit" value="Connexion" className="input" />
       </form>
+      <p className="login_create"><a href="/createuser">Créer un compte</a></p>
         </div>
         </main>
         </body>

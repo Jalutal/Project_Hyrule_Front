@@ -3,7 +3,7 @@ import HeaderUsers from "../component/HeaderUsers";
 import React, { useState } from 'react';
 
 
-const FanficsForm = () => {
+const UserCreateFictionPage = () => {
   const [message, setMessage] = useState(null);
   const [formData, setFormData] = useState({
     fictionname: '',
@@ -90,4 +90,4 @@ const FanficsForm = () => {
   );
 };
 
-export default FanficsForm;
+export default UserCreateFictionPage;

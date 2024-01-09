@@ -254,6 +254,11 @@ a.nav-link_footer {
     width: 10%;
 }
 
+.login_create {
+    text-align: center;
+    margin-top: 25px;
+}
+
 .input {
     font-size: 1.0em;
     border-radius: 10px;

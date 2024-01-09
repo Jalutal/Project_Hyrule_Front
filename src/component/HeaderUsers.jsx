@@ -33,7 +33,7 @@ const HeaderUsers = () => {
                         <ul>
                             <li class="li_nav"><a href="/newfic" class="nav-link">Dashboard</a></li>
                             <li class="li_nav"><a href="/user/manageinfos" class="nav-link">Gérer mes infos</a></li>
-                            <li class="li_nav"><a href="/user/fictions" class="nav-link">Créer une fiction</a></li>
+                            <li class="li_nav"><a href="/user/fictions" class="nav-link">Gérer les fictions</a></li>
                             <li class="li_nav"><a href="/login" className="adminLogout" onClick={handleLogout}>Se déconnecter</a></li>
                         </ul>
                     </nav>

@@ -16,6 +16,7 @@ import AdminManageUser from './page/AdminManageUsers';
 import AdminManageFictions from './page/AdminManageFictions';
 import UserManageInfos from './page/UserManageInfos';
 import MentionsLegales from './page/MentionsLegales';
+import CreateUser from './page/CreateUser';
 
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/createuser" element={<CreateUser />} />
         <Route path="/newfic/details/:id" element={<FictionsMain />} />
         <Route path="/newfic" element={<NewFictions />} />
         <Route path="/contact" element={<ContactsPage />} />
@@ -38,7 +40,8 @@ function App() {
         <Route path="/admin/manageusers" element={<AdminManageUser />} />
         <Route path="admin/managefictions" element={<AdminManageFictions />} />
         <Route path="/user" element={<User />} />
-        <Route path="/user/fictions" element={<UserCreateFictionPage />} />
+        <Route path="/user/fictions" element={<UserManageFictions />} />
+        <Route path="/user/createfiction" element={<UserCreateFictionPage />} />
         <Route path="/user/checkfictions" element={<UserCheckFictions />} />
         <Route path="/user/manageinfos" element={<UserManageInfos />} />
       </Routes>

@@ -25,19 +25,15 @@ const AdminManageUser = () => {
 
 
   // Requête fetch pour supprimer un utilisateur
-  const handleDeleteUsers = async (event, usersId) => {
-    try {
-      await fetch("http://localhost:3000/api/users/" + usersId, {
-        method: "DELETE",
-        headers: { Authorization: "Bearer " + token }
-      });
-      
-      const usersResponse = await fetch("http://localhost:3000/api/users");
-      const usersResponseData = await usersResponse.json();
-      setUsers(usersResponseData);
-    } catch (error) {
-      console.error("Error deleting user:", error);
-    }
+  const handleDeleteUser = async (event, UserId) => {
+    await fetch("http://localhost:3000/api/users/" + UserId, {
+      method: "DELETE",
+      headers: { Authorization: "Bearer " + token },
+    });
+
+    const usersResponse = await fetch("http://localhost:3000/api/users");
+    const usersResponseData = await usersResponse.json();
+    setUsers(usersResponseData);
   };
 
   return (
@@ -57,7 +53,7 @@ const AdminManageUser = () => {
                 <h2>{user.username}</h2>
                 <p>{user.id}</p>
                 {decodedToken.data.role !== 2 && (
-                  <button onClick={(event) => handleDeleteUsers(event, user.id)}>Supprimer: {user.username}</button>
+                  <button onClick={(event) => handleDeleteUser(event, user.id)}>Supprimer: {user.username}</button>
                 )}
               </article>
             );
