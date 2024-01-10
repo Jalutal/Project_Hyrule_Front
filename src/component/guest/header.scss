@@ -1,0 +1,230 @@
+// ############### AGENCEMENT DU HEADER : LOGO ET BARRE NAV #################
+.header_guest {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;    
+}
+// ############### SECTION LOGO : PARTIE DU HEADER DE GAUCHE @ LOGO & TITLE ##################
+.logos_guest {
+    background-color: #E8F6D1;
+    border-radius: 40px;
+    margin: 10px;
+}
+.logo_text_guest {
+    font-size: 1.8em;
+}
+.logo_under {
+    font-size: 1.0em;
+}
+.img_logo_guest {
+    display: flex;
+    align-items: center;
+}
+.img_logo_guest img {
+    display: flex;
+    margin: 10px;
+    border-radius: 100px;
+    max-width: 100px;    
+    filter: drop-shadow(2px 2px 2px green);
+    -webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+.img_logo_guest img:hover {
+    -webkit-transform: scale(1.1);
+	transform: scale(1.1);
+}
+// ################ SECTION NAV : PARTIE DU HEADER DE DROITE @ BARRE NAV ###############
+.nav_guest ul {
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+    background-color: #E8F6D1;
+    border-radius: 40px;
+    margin: 10px;
+    padding-left: 10px;
+    font-size: 1.8em;
+    gap: 40px;
+}
+.nav_guest ul li img {
+    max-width: 100px;
+}
+a.nav-link_guest {
+    text-decoration: none;
+    color: black;
+}
+a.nav-link-last_guest img {
+    -webkit-transform: scale(1);
+	transform: scale(1);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+// ############## GESTION DU HOVER/AFTER POUR L'EFFET DOUBLE BARRE #################
+a.nav-link-last_guest img:hover {
+    -webkit-transform: scale(1.1);
+	transform: scale(1.1);
+}
+a.nav-link_guest:hover::after {
+    width: 100%;
+}
+a.nav-link_guest::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 3px;
+    background-color: orange;
+    transition: all 0.2s ease;
+}
+a.nav-link_guest:hover::before {    
+    width: 100%;
+}
+a.nav-link_guest::before {
+    content: "";
+    display: block;
+    width: 0;
+    height: 3px;
+    background-color: orange;
+    transition: all 0.2s ease;
+}
+.burger-menu-button {
+    display: none; // Masquer le bouton sur des écrans plus larges
+}  
+.menu-open {
+    .nav_guest {
+      display: block; // Afficher le menu lorsque le bouton est cliqué
+    }
+}
+// ################## MEDIA QUERIES POUR LE RESPONSIVE #########################
+// ##### TABLETTES ####
+@media (max-width: 768px) {
+    .logos_guest {
+      background-color: #E8F6D1;
+      border-radius: 40px;
+      margin: 10px;
+    }
+    .img_logo_guest {
+        
+        align-items: center; // Centrer les éléments
+    }
+    .img_logo_guest img[alt="La Biliothèque d'Hyrule"] {
+      order: -1; // Déplacez l'image au-dessus du texte
+      max-width: 15%; // Limitez la largeur de l'image
+      height: auto; // Garantissez une hauteur proportionnelle
+    }  
+    .logo_text_guest {
+      font-size: 1.0em;
+      padding: 10px;
+      margin: 5px;
+    }  
+    .logo_under {
+      display: none;
+    }  
+    .nav_guest {
+      display: none; // Masquer la navigation par défaut sur les écrans plus petits
+      flex-direction: column; // Aligner les éléments en colonne
+      position: absolute;
+      top: 9px; // Ajuster la position du menu selon votre conception
+      left: 165px;
+      width: 70%;
+      font-size: 10px;
+      background-color: #E8F6D1;
+      border-radius: 10px;
+      padding-left: 10px;
+    }
+    .nav_guest ul {
+        gap: 20px;
+        margin: 0px;
+        padding: 0px;
+    }
+  
+    .burger-menu-button {
+      display: block; // Afficher le bouton sur des écrans plus étroits
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+  
+    .bar {
+      width: 40px;
+      height: 3px;
+      background-color: #333;
+      margin: 6px 0;
+      transition: 0.4s;
+    }
+  
+    .menu-open {
+      .nav_guest {
+        display: flex; // Afficher la navigation lorsque le bouton est cliqué
+      }
+    }
+  }
+// ##### SMARTPHONES ####
+  @media (max-width: 425px) {
+    .logos_guest {
+      background-color: #E8F6D1;
+      border-radius: 40px;
+      margin: 10px;
+    }
+  
+    .img_logo_guest {
+      align-items: center; // Centrer les éléments
+    }
+  
+    .img_logo_guest img[alt="La Biliothèque d'Hyrule"] {
+      order: -1; // Déplacez l'image au-dessus du texte
+      max-width: 40%; // Limitez la largeur de l'image
+      height: auto; // Garantissez une hauteur proportionnelle
+    }
+  
+    .logo_text_guest {
+      font-size: 1.0em;
+      padding: 10px;
+      margin: 5px;
+    }
+  
+    .logo_under {
+      display: none;
+    }
+  
+    .nav_guest {
+      display: none; // Masquer la navigation par défaut sur les écrans plus petits
+      flex-direction: column; // Aligner les éléments en colonne
+      position: absolute;
+      top: 13px; // Ajuster la position du menu selon votre conception
+      left:1px; // Ajuster la position du menu selon votre conception
+      width: 90%; // Ajuster la largeur du menu selon votre conception
+      font-size: 10px;
+      background-color: #E8F6D1;
+      border-radius: 10px;
+      padding-left: 10px;
+    }
+  
+    .nav_guest ul {
+      gap: 15px; // Ajuster l'espace entre les éléments de la liste
+      margin: 0px;
+      padding: 0px;
+    }
+  
+    .burger-menu-button {
+      display: block; // Afficher le bouton sur des écrans plus étroits
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+  
+    .bar {
+      width: 40px;
+      height: 3px;
+      background-color: #333;
+      margin: 6px 0;
+      transition: 0.4s;
+    }
+  
+    .menu-open {
+      .nav_guest {
+        display: flex; // Afficher la navigation lorsque le bouton est cliqué
+      }
+    }
+  }
+  
+  
+  

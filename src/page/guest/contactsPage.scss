@@ -31,3 +31,18 @@ main {
 .form_align {
     margin: 10px;
 }
+/* ################## MEDIA QUERIES POUR LE RESPONSIVE ######################### */
+/* ##### TABLETTES #### */
+@media (max-width: 768px) {
+    .form {
+        width: 80%;
+        margin: auto;
+      }
+  }
+/* ##### SMARTPHONES #### */
+@media (max-width: 425px) {
+    .form {
+      width: 90%;
+      margin: auto;
+    }
+  }

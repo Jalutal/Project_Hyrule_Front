@@ -6,16 +6,14 @@
     margin: 0;
     padding: 0;
 }
-/* .sub_header {
-    margin: auto;
-    text-align: center;
-    margin-top: 80px;
-    
-    border-radius: 40px;
-    width: 20%;
-    padding: 10px;
-} */
+body {
+    overflow-x: hidden;
+  }
 /* ######## PRESENTATION DU SITE ############ */
+.main_rectangle {
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
 .main_section {
     display: flex;
     justify-content: space-around;
@@ -39,15 +37,23 @@
 }
 /* ############ BLOC TOI AUSSI PUBLIE ########## */
 .bloc_news {
-    width: 16vw;
+    width: 100%;
+    max-width: 300px;
     background-color: antiquewhite;
     border-radius: 20px;
     padding: 10px;
     height: 320px;
+    box-sizing: border-box; /* Inclure le padding et la bordure dans la largeur totale */
+    margin-top: 20px; /* Ajouter une marge pour l'espace entre les blocs */
+    
+}
+.bloc_news img{
+    max-width: 250px;
 }
 .bloc_news h2{
     padding-left: 0px;
     padding-right: 0px;
+    font-size: 20px;
 }
 .bloc_news p{
     padding-left: 10px;
@@ -58,6 +64,7 @@
     border-bottom: 2px solid antiquewhite;
     border-right: 2px solid antiquewhite;
     border-radius: 20px;
+    order: 0;
 }
 .bloc_main p {
     text-align: center;
@@ -68,9 +75,14 @@
     text-decoration: none;
     color: black;
 }
-
-
-
 .content_mentions {
     list-style-type: none;
 }
+/* ################## MEDIA QUERIES POUR LE RESPONSIVE ######################### */
+/* ##### TABLETTES #### */
+@media (max-width: 768px) {
+    .main_section {
+        flex-direction: column;
+    }  
+  }
+/* ##### SMARTPHONES #### */

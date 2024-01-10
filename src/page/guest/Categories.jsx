@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import Header from "../../component/Header";
-import Footer from '../../component/Footer';
+import Header from "../../component/guest/Header";
+import Footer from '../../component/guest/Footer';
 import CategoriesDetail from './CategoriesDetail'; 
 import "./categories.scss";
 
@@ -61,10 +61,8 @@ const Categories = () => {
           <CategoriesDetail category={selectedCategory} />
         )}
           </div>
-          <Footer />
         </div>
-
-        
+        <Footer />
       </main>
     </body>
   );

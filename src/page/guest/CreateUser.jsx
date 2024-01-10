@@ -1,4 +1,4 @@
-import Header from "../../component/Header";
+import Header from "../../component/guest/Header";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./createUser.scss";

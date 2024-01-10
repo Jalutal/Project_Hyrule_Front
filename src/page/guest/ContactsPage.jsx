@@ -1,5 +1,5 @@
-import Header from '../../component/Header';
-import Footer from '../../component/Footer';
+import Header from '../../component/guest/Header';
+import Footer from '../../component/guest/Footer';
 import "./contactsPage.scss";
 
 const ContactsPage = () => {
@@ -49,8 +49,8 @@ const ContactsPage = () => {
         </div>
       </form>
       </div>
+      </div>
       <Footer />
-    </div>
     </main>
     </body>
   )

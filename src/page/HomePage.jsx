@@ -1,6 +1,6 @@
 import React from 'react';
-import Header from '../component/Header';
-import Footer from '../component/Footer';
+import Header from '../component/guest/Header';
+import Footer from '../component/guest/Footer';
 import './HomePage.css';
 
 const HomePage = () => {
@@ -23,9 +23,9 @@ const HomePage = () => {
               <p>Découvre notre communauté et partage tes créations ou découvre celles des autres.</p>
             </div>
             </a>
-          </section>
-          <Footer /> 
+          </section> 
         </div>
+        <Footer /> 
       </main>
     </body>
   );

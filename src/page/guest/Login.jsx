@@ -1,4 +1,4 @@
-import Header from "../../component/Header";
+import Header from "../../component/guest/Header";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./login.scss";
@@ -41,7 +41,7 @@ const Login = () => {
             <div className="main_rectangle">
               <Header />
               {message && <p>{message}</p>}
-              <form onSubmit={handleLogin} className="login_form">
+              <form onSubmit={handleLogin} className="login_connect">
                 <h2 className="login_create">Identifiez-vous :</h2>
                 <label>
                   Username : 
@@ -54,7 +54,7 @@ const Login = () => {
                 <img src="/assets/img/sticker-zelda-sheikah-logo-02-removebg-preview.png" alt="Connexion" />
                 <input type="submit" value="Connexion" className="input" />
               </form>
-              <p className="login_create"><a href="/createuser">Créer un compte</a></p>
+              <p className="login_conn_create"><a href="/createuser" className="login_a">Créer un compte</a></p>
             </div>
           </main>
         </body>
