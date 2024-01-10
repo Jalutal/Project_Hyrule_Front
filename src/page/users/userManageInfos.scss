@@ -1,0 +1,11 @@
+@import '../../mixins';
+// ######### MISE EN PAGE GENERALE VIA MIXINS ###########
+body {
+    @include body;
+}
+main {
+    @include main;
+}
+.main_rectangle {
+    @include main_rectangle;
+}

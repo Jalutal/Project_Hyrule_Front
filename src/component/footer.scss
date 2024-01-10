@@ -1,0 +1,15 @@
+// ########### AGENCEMENT DU FOOTER ################
+.footer div {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    text-align: center;   
+}
+// ################# SUPPRESSION SOULIGNAGE ET COULEUR FIXE #############
+a.nav-link_footer {
+    text-decoration: none;
+    color: black;
+    font-size: 1.1em;
+}

@@ -1,0 +1,33 @@
+@import '../../mixins';
+// ######### MISE EN PAGE GENERALE VIA MIXINS ###########
+body {
+    @include body;
+}
+main {
+    @include main;
+}
+.main_rectangle {
+    @include main_rectangle;
+}
+// ######### MISE EN PAGE DU FORMULAIRE DE CONTACT ############
+.form {
+    text-align: center;  
+    width: 30%; /* Centrage et largeur du formulaire */
+    margin: auto;  
+}
+.form_contact {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+}
+.form_contact input{
+        width: 300px; /* Définir la largeur pour la cohérence*/
+        height: 30px; /* Définir la hauteur pour la cohérence*/
+}
+.form_contact textarea{
+    width: 300px; /* Définir la largeur pour la cohérence*/
+    height: 80px; /* Définir la hauteur pour la cohérence*/
+}
+.form_align {
+    margin: 10px;
+}

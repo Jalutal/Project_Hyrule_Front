@@ -1,0 +1,17 @@
+@import '../../mixins';
+// ######### MISE EN PAGE GENERALE VIA MIXINS ###########
+body {
+    @include body;
+}
+main {
+    @include main;
+}
+// ####### ALIGNEMENT DU CONTAINER #########
+.container_admin {
+    display: flex;
+    flex-direction: row;
+}
+.div_admin {
+    display: flex;
+    flex-direction: row;
+}

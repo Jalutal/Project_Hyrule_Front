@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import FictionsMain from './FictionsMain';
+import "./categoriesDetail.scss";
 
 const CategoriesDetail = ({ category }) => {
   const [allFictions, setAllFictions] = useState(null);
@@ -26,7 +27,6 @@ const CategoriesDetail = ({ category }) => {
   }, []);
 
   useEffect(() => {
-    // Filtrer les fictions par la catégorie spécifiée
     if (allFictions && category) {
       const filteredFictions = allFictions.filter(fiction => fiction.category === category);
       setCategoryFictions(filteredFictions);

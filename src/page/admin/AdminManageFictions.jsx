@@ -1,18 +1,15 @@
 import { useEffect, useState } from "react";
 import { jwtDecode } from "jwt-decode";
-import HeaderAdmin from "../component/HeaderAdmin";
-import { useVerifyIfUserIsLogged } from "./../utils/security-utils";
-
-
+import HeaderAdmin from "../../component/admin/HeaderAdmin";
+import { useVerifyIfUserIsLogged } from "../../utils/security-utils";
+import "./adminManageFictions.scss";
 
 const AdminManageFictions = () => {
   useVerifyIfUserIsLogged();
   const [fictions, setFictions] = useState(null);
   const token = localStorage.getItem("jwt");
   const decodedToken = jwtDecode(token);
- 
-
-  
+   
   // Requête Fetch pour récupérer (get) toutes les fictions
   useEffect(() => {
     (async () => {     
@@ -21,8 +18,6 @@ const AdminManageFictions = () => {
       setFictions(fictionsResponseData);
     })();
   }, []);
-
-
 
   // Requête fetch pour supprimer une fiction
   const handleDeleteFictions = async (event, fictionId) => {
@@ -35,46 +30,32 @@ const AdminManageFictions = () => {
     setFictions(fictionsResponseData)
   }
 
-
-
-
   return (
     <body>
       <main>
         <div className="main_rectangle">
-        <HeaderAdmin />
-        <div className="container_admin">       
-        <div className="div_admin">
+          <HeaderAdmin />
+          <h1>Liste des fictions :</h1> 
+          <div className="container_admin">       
+            <div>
+              {fictions ? (
+                <>
+                  {fictions.map((fiction) => {
+                  return(
+                  <article>
+                    <h2>{fiction.fictionname}</h2>
+                    {decodedToken.data.role !== 2 && (
+                    <button onClick={(event) => handleDeleteFictions(event, fiction.id)}>Supprimer: {fiction.fictionname}</button>
+                    )}
+                  </article>
+                  );
+                  })}
+                </>
+              ) : (
+                  <p>En cours de chargement</p>
+              )}</div>
+          </div>
         </div>
-        </div>
-        
-        
-
-        <h1>Liste des fictions :</h1> 
-        <div className="container_admin">       
-        <div>
-        {fictions ? (
-          <>
-          {fictions.map((fiction) => {
-            return(
-              <article>
-                <h2>{fiction.fictionname}</h2>
-                {decodedToken.data.role !== 2 && (
-                  <button onClick={(event) => handleDeleteFictions(event, fiction.id)}>Supprimer: {fiction.fictionname}</button>
-                )}
-              </article>
-            );
-          })}
-  </>
-) : (
-  <p>En cours de chargement</p>
-)}</div>
-        <div className="div_admin">
-        </div>
-        </div>
-        </div>
-
-
       </main>
     </body>
   );

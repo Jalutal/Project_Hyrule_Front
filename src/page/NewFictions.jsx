@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Header from "../component/Header";
-import FictionsMain from "./FictionsMain";
+import FictionsMain from "./guest/FictionsMain";
 import Footer from '../component/Footer';
 
 const NewFictions = () => {

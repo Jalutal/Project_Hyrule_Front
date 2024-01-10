@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
-import Header from "../component/Header";
-import Footer from '../component/Footer';
-import CategoriesDetail from './CategoriesDetail'; // Importe le composant CategoriesDetail
+import Header from "../../component/Header";
+import Footer from '../../component/Footer';
+import CategoriesDetail from './CategoriesDetail'; 
+import "./categories.scss";
 
 const Categories = () => {
   const [fictions, setFictions] = useState(null);
@@ -23,7 +24,6 @@ const Categories = () => {
   }, []);
 
   useEffect(() => {
-    // Si les fictions existent, extrayez les catégories uniques
     if (fictions) {
       const categoriesSet = new Set(fictions.map(fiction => fiction.category));
       setUniqueCategories(Array.from(categoriesSet));

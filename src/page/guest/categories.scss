@@ -1,0 +1,32 @@
+@import '../../mixins';
+// ######### MISE EN PAGE GENERALE VIA MIXINS ###########
+body {
+    @include body;
+}
+main {
+    @include main;
+}
+// ######### CREATION DE LA MISE EN PAGE ######
+.content-container {
+    @include content-container;
+}
+.content-container section {
+    @include content-container-section
+}
+.content-container button {
+    @include content-container-button;
+}
+.content-container h3 {
+    @include content-container-h3;
+}
+// ######### BOUTONS EN FONCTION DE CAT DETAILS ######
+.button_cat {
+    font-family: "Hylia";
+    overflow: hidden; 
+    white-space: nowrap; /* Empêche le texte de passer à la ligne */
+    height: 40px; 
+    margin: 0; 
+    padding: 5px; 
+    display: flex;
+    align-items: center; 
+}

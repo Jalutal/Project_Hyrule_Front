@@ -1,0 +1,13 @@
+@import '../../mixins';
+// ######### MISE EN PAGE GENERALE VIA MIXINS ###########
+body {
+    @include body;
+}
+main {
+    @include main;
+}
+// ######### CENTRAGE DU TEXTE + TAILLE POLICE ############
+.dash_admin {
+    text-align: center;
+    font-size: 1.7em;
+}

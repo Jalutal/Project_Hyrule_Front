@@ -1,7 +1,7 @@
 
-import HeaderUsers from "../component/HeaderUsers";
+import HeaderUsers from "../../component/users/HeaderUsers";
 import React, { useState } from 'react';
-
+import "./userCreateFictionPage.scss";
 
 const UserCreateFictionPage = () => {
   const [message, setMessage] = useState(null);
@@ -21,7 +21,6 @@ const UserCreateFictionPage = () => {
   const token = localStorage.getItem("jwt");
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     try {
       console.log(formData);
       const response = await fetch('http://localhost:3000/api/fanfics', {
@@ -32,7 +31,6 @@ const UserCreateFictionPage = () => {
         },
         body: JSON.stringify(formData)
       });
-
       if (response.ok) {
         // La mise à jour a réussi, vous pouvez gérer la redirection ou d'autres actions ici
         setMessage('Mise à jour réussie !');
@@ -47,45 +45,28 @@ const UserCreateFictionPage = () => {
 
   return (
     <body>
-            <main>
-              <div className="main_rectangle">
-      <HeaderUsers />
-      <h1>Ajouter/Modifier Fanfics</h1>
-      {message && <p>{message}</p>}
-      <form onSubmit={handleSubmit}>
-        <label>
-          Fiction Name:
-          <input
-            type="text"
-            name="fictionname"
-            value={formData.fictionname}
-            onChange={handleChange}
-          />
-        </label>
-        <br />
-        <label>
-          Story:
-          <textarea
-            name="story"
-            value={formData.story}
-            onChange={handleChange}
-          ></textarea>
-        </label>
-        <br />
-        <label>
-          Category:
-          <input
-            type="text"
-            name="category"
-            value={formData.category}
-            onChange={handleChange}
-          />
-        </label>
-        <br />
-        <button type="submit">Mettre à jour</button>
-      </form>
-    </div>
-    </main>
+      <main>
+        <div className="main_rectangle">
+          <HeaderUsers />          
+          {message && <p>{message}</p>}
+          <form onSubmit={handleSubmit} className="login_form">
+          <h1 className="login_create">Créer une fiction</h1>
+            <label>
+              Nom de la fiction:
+              <input type="text" name="fictionname" value={formData.fictionname} onChange={handleChange} />
+            </label>
+            <label>
+              Histoire:
+              <textarea name="story" value={formData.story}onChange={handleChange}></textarea>
+            </label>
+            <label>
+              Categorie:
+              <input type="text" name="category" value={formData.category} onChange={handleChange} />
+            </label>
+            <button type="submit" className="input">Envoyer</button>
+          </form>
+        </div>
+      </main>
     </body>
   );
 };

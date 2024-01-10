@@ -1,14 +1,10 @@
-import HeaderUsers from "../component/HeaderUsers";
+import HeaderUsers from "../../component/users/HeaderUsers";
 
-import { useVerifyIfUserIsLogged } from "../utils/security-utils";
+import { useVerifyIfUserIsLogged } from "../../utils/security-utils";
 
 const UserManageFictions = () => {
   useVerifyIfUserIsLogged();
-
   
-
- 
-
         return (
             <>
             <body>

@@ -1,0 +1,13 @@
+@import '../../mixins';
+// ######### MISE EN PAGE GENERALE VIA MIXINS ###########
+body {
+    @include body;
+}
+main {
+    @include main;
+}
+// ###### MISE EN PAGE DU TEXTE #############
+.dash_user {
+    text-align: center;
+    font-size: 1.7em;
+}

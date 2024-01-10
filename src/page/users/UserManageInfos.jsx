@@ -1,36 +1,32 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import HeaderUsers from "../component/HeaderUsers";
-import { useVerifyIfUserIsLogged } from "./../utils/security-utils";
+import HeaderUsers from "../../component/users/HeaderUsers";
+import { useVerifyIfUserIsLogged } from "../../utils/security-utils";
 import { jwtDecode } from "jwt-decode";
+import "./userManageInfos.scss";
 
 const UserManageSelf = () => {
   useVerifyIfUserIsLogged();
 
-  const { id } = useParams();
   const [message, setMessage] = useState(null);
   const [user, setUser] = useState(null);
   const token = localStorage.getItem("jwt");
 
-  
-  useEffect(() => {
+    useEffect(() => {
     userFetch();
-  }, []);
+    }, []);
 
   const userFetch = async () => {
     if (token) {
       const decodedToken = jwtDecode(token)
       const userResponse = await fetch(`http://localhost:3000/api/users/${decodedToken.dataId}`);
-    const userResponseData = await userResponse.json();
-    setUser(userResponseData.data);
-    console.log(decodedToken.dataId)
+      const userResponseData = await userResponse.json();
+      setUser(userResponseData.data);
+      console.log(decodedToken.dataId)
     }
-    
   }
 
   const handleUpdateUser = async (event) => {
-    event.preventDefault();    
-    
+    event.preventDefault(); 
     const email = event.target.email.value
     const username = event.target.username.value
     const editUser = {
@@ -53,38 +49,32 @@ const UserManageSelf = () => {
       } else {
         setMessage("Erreur - impossible de mettre à jour");
       }
-    
   };
 
   return (
     <body>
       <main>
         <div className="main_rectangle">
-          <HeaderUsers />
-          
-          <h1>Informations de l'utilisateur :</h1> 
-          <div className="container_admin">
-            <div className="div_admin">
+          <HeaderUsers />          
               <>{message && <p>{message}</p>}</>
               {user && (
-          <form onSubmit={handleUpdateUser}>
-            <div>
-          <label>
-            Email :
-            <input type="text" name="email" defaultValue={user.email}/>
-          </label>
-        </div>
-        <div>
-          <label>
-            Username
-            <input type="text" name="username" defaultValue={user.username}/>
-          </label>
-        </div>
-            <input type="submit" />
-          </form>
-        )}
-            </div>
-          </div>
+              <form onSubmit={handleUpdateUser} className="login_form">
+                <h1>Informations de l'utilisateur :</h1> 
+                <div>
+                  <label>
+                    Email : 
+                    <input type="text" name="email" defaultValue={user.email}/>
+                  </label>
+                </div>
+                <div>
+                  <label>
+                    Username :  
+                    <input type="text" name="username" defaultValue={user.username}/>
+                  </label>
+                </div>
+                <input type="submit" className="input" />
+              </form>
+              )}
         </div>
       </main>
     </body>

@@ -8,13 +8,11 @@ const FictionsMain = ({ fictionId }) => {
       try {
         const fictionResponse = await fetch(`http://localhost:3000/api/fanfics/${fictionId}`);
         const fictionResponseData = await fictionResponse.json();
-
         setFiction(fictionResponseData.data);
       } catch (error) {
         console.error('Erreur lors de la récupération de la fiction:', error);
       }
     };
-
     fetchFiction();
   }, [fictionId]);
 

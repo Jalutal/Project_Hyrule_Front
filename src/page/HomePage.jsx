@@ -8,18 +8,11 @@ const HomePage = () => {
     <body>
       <main>
         <div className="main_rectangle">
-          <Header />
-
-          <section className="sub_header">
-            
-          </section>
-
+          <Header />        
           <section className="main_section">
-            <div className="bloc_main">
-              
+            <div className="bloc_main">              
               <h1>Bienvenue dans la bibliothèque d'Hyrule !</h1>
-              <p>
-              le repaire ultime des passionnés de l'univers légendaire de Zelda ! Plongez au coeur de notre royaume virtuel où les pages s'animent avec des récits captivants, des aventures épiques, et des histoires inédites inspirées de l'univers envoûtant des jeux vidéo Zelda.</p>
+              <p>Le repaire ultime des passionnés de l'univers légendaire de Zelda ! Plongez au coeur de notre royaume virtuel où les pages s'animent avec des récits captivants, des aventures épiques, et des histoires inédites inspirées de l'univers envoûtant des jeux vidéo Zelda.</p>
               <p>Que vous soyez un héros intrépide, un voyageur du temps ou un simple admirateur des mystères de la Triforce, notre communauté dédiée à la fanfiction Zelda vous invite à explorer des mondes parallèles, à découvrir des personnages inattendus et à revisiter les classiques de la saga sous un nouvel angle.</p>
               <p>Rejoignez-nous pour partager votre amour pour Zelda, échanger des idées avec d'autres fans créatifs, et plonger dans des aventures qui transcendent les écrans.</p>            
             </div>
@@ -31,7 +24,6 @@ const HomePage = () => {
             </div>
             </a>
           </section>
-          
           <Footer /> 
         </div>
       </main>

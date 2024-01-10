@@ -1,5 +1,6 @@
-import Header from '../component/Header';
-import Footer from '../component/Footer';
+import Header from '../../component/Header';
+import Footer from '../../component/Footer';
+import "./contactsPage.scss";
 
 const ContactsPage = () => {
   return (

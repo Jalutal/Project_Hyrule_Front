@@ -1,6 +1,7 @@
-import Header from "../component/Header";
+import Header from "../../component/Header";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import "./createUser.scss";
 
 const CreateUser = () => {
     const [message, setMessage] = useState(null);
@@ -35,39 +36,38 @@ const CreateUser = () => {
          } else {    
             setMessage("Erreur lors de l'enregistrement");
     }
-
-
   };
+
     return (
-        <body>
+      <body>
         <main>
-        <div className="main_rectangle">
+          <div className="main_rectangle">
             <Header />
             {message && <p>{message}</p>}
-      <form onSubmit={handleRegistration} className="login_form">
-      <h2 className="login_create">Créez votre compte :</h2>
-        <label>
-          Username : 
-          <input type="text" name="username" />
-        </label>
-        <label>
-          Password : 
-          <input type="password" name="password" />
-        </label>
-        <label>
-          Confirmez le Password : 
-          <input type="password" name="confirmPassword" />
-        </label>
-        <label>
-          Email : 
-          <input type="text" name="email" />
-        </label>
-        <img src="/assets/img/sticker-zelda-sheikah-logo-02-removebg-preview.png" alt="Connexion" />
-        <input type="submit" value="Inscription" className="input" />
-      </form>
-        </div>
+            <form onSubmit={handleRegistration} className="login_form">
+              <h2 className="login_create">Créez votre compte :</h2>
+              <label>
+                Username : 
+                <input type="text" name="username" />
+              </label>
+              <label>
+                Password : 
+                <input type="password" name="password" />
+              </label>
+              <label>
+                Confirmez le Password : 
+                <input type="password" name="confirmPassword" />
+              </label>
+              <label>
+                Email : 
+                <input type="text" name="email" />
+              </label>
+              <img src="/assets/img/sticker-zelda-sheikah-logo-02-removebg-preview.png" alt="Connexion" />
+              <input type="submit" value="Inscription" className="input" />
+            </form>
+          </div>
         </main>
-        </body>
+      </body>
     )       
 }
 

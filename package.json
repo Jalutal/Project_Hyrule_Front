@@ -15,10 +15,12 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "set PORT=3001 && react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "sass": "sass -w assets/scss:assets/css"
+
   },
   "eslintConfig": {
     "extends": [
@@ -41,5 +43,11 @@
   "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
   "main": "index.js",
   "author": "Jesse Granier",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "postcss-loader": "^7.3.4",
+    "resolve-url-loader": "^5.0.0",
+    "sass": "^1.69.7",
+    "sass-loader": "^13.3.3"
+  }
 }
