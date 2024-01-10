@@ -3,7 +3,7 @@ import './App.css';
 import { Route, Routes, BrowserRouter } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import Login from './page/guest/Login';
-import NewFictions from './page/NewFictions';
+import NewFictions from './page/guest/NewFictions';
 import FictionsMain from './page/guest/FictionsMain';
 import Admin from './page/admin/AdminDashboard';
 import User from './page/users/UserDashboard';

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import Header from "../component/guest/Header";
-import FictionsMain from "./guest/FictionsMain";
-import Footer from '../component/guest/Footer';
+import Header from "../../component/guest/Header";
+import FictionsMain from "./FictionsMain";
+import Footer from '../../component/guest/Footer';
 
 const NewFictions = () => {
   const [fictions, setFictions] = useState(null);
@@ -39,7 +39,7 @@ const NewFictions = () => {
     <div className="main_rectangle">
       <Header />
       <div className="content-container">
-        <section className='section'>
+        <section>
           <h1>Liste des Fictions:</h1>
           <ul>
             {fictions ? (
