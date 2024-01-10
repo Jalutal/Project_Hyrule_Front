@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import HeaderUsers from "../../component/users/HeaderUsers";
+import Footer from '../../component/guest/Footer';
 import { useVerifyIfUserIsLogged } from "../../utils/security-utils";
 import { jwtDecode } from "jwt-decode";
 import "./userManageInfos.scss";
@@ -59,7 +60,7 @@ const UserManageSelf = () => {
               <>{message && <p>{message}</p>}</>
               {user && (
               <form onSubmit={handleUpdateUser} className="login_form">
-                <h1>Informations de l'utilisateur :</h1> 
+                <h1>Modification des informations :</h1> 
                 <div>
                   <label>
                     Email : 
@@ -76,6 +77,7 @@ const UserManageSelf = () => {
               </form>
               )}
         </div>
+        <Footer />
       </main>
     </body>
   );

@@ -16,15 +16,19 @@ main {
     font-size: 1.4em;
     gap: 20px
 }
-.login_form input {
+.login_form input, .login_form textarea {
     height: 30px;
     border-radius: 10px;
     font-size: 1.0em;
     padding-left: 5px;
+    width: 90%;
 }
 .login_form img {
     width: 10%;
 }
+.login_form label {
+    margin-bottom: 10px; /* Ajouter un espace entre les labels */
+  }
 .login_create {
     text-align: center;
     margin-top: 25px;

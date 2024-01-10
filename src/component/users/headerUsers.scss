@@ -1,23 +1,23 @@
 // ############### AGENCEMENT DU HEADER : LOGO ET BARRE NAV #################
-.header {
+.header_user {
     display: flex;
     align-items: center;
     justify-content: space-between;    
 }
 // ############### SECTION LOGO : PARTIE DU HEADER DE GAUCHE @ LOGO & TITLE ##################
-.logos {
+.logos_user {
     background-color: #E8F6D1;
     border-radius: 40px;
     margin: 10px;
 }
-.logo_text {
+.logo_text_user {
     font-size: 1.8em;
 }
-.img_logo {
+.img_logo_user {
     display: flex;
     align-items: center;
 }
-.img_logo img {
+.img_logo_user img {
     display: flex;
     margin: 10px;
     border-radius: 100px;
@@ -26,12 +26,12 @@
     -webkit-transition: .3s ease-in-out;
 	transition: .3s ease-in-out;
 }
-.img_logo img:hover {
+.img_logo_user img:hover {
     -webkit-transform: scale(1.1);
 	transform: scale(1.1);
 }
 // ################ SECTION NAV : PARTIE DU HEADER DE DROITE @ BARRE NAV ###############
-.nav ul {
+.nav_user ul {
     display: flex;
     align-items: center;
     list-style-type: none;
@@ -42,28 +42,28 @@
     font-size: 1.8em;
     gap: 40px;
 }
-.nav ul li img {
+.nav_user ul li img {
     max-width: 100px;
 }
-a.nav-link {
+a.nav-link_user {
     text-decoration: none;
     color: black;
 }
-a.nav-link-last img {
+a.nav-link-last_user img {
     -webkit-transform: scale(1);
 	transform: scale(1);
 	-webkit-transition: .3s ease-in-out;
 	transition: .3s ease-in-out;
 }
 // ############## GESTION DU HOVER/AFTER POUR L'EFFET DOUBLE BARRE #################
-a.nav-link-last img:hover {
+a.nav-link-last_user img:hover {
     -webkit-transform: scale(1.1);
 	transform: scale(1.1);
 }
-a.nav-link:hover::after {
+a.nav-link_user:hover::after {
     width: 100%;
 }
-a.nav-link::after {
+a.nav-link_user::after {
     content: "";
     display: block;
     width: 0;
@@ -71,10 +71,10 @@ a.nav-link::after {
     background-color: orange;
     transition: all 0.2s ease;
 }
-a.nav-link:hover::before {    
+a.nav-link_user:hover::before {    
     width: 100%;
 }
-a.nav-link::before {
+a.nav-link_user::before {
     content: "";
     display: block;
     width: 0;
@@ -83,7 +83,7 @@ a.nav-link::before {
     transition: all 0.2s ease;
 }
 // ############## GESTION DU BOUTON DE LOGOUT #################
-.adminLogout {
+.userLogout {
     color: antiquewhite;
     background-color: black;
     box-shadow: 5px 5px 5px black;
@@ -91,7 +91,7 @@ a.nav-link::before {
     padding-top: 3px;
 
 }
-.adminLogout:hover {
+.userLogout:hover {
     color: black;
     background-color: antiquewhite;
     box-shadow: 5px 5px 5px antiquewhite;
@@ -99,3 +99,118 @@ a.nav-link::before {
     padding-top: 3px;
 
 }
+// ################## MEDIA QUERIES POUR LE RESPONSIVE #########################
+// ##### TABLETTES ####
+@media (max-width: 768px) {
+    .logos_user {
+      background-color: #E8F6D1;
+      border-radius: 40px;
+      margin: 10px;
+    }
+    .img_logo_user {        
+        align-items: center; // Centrer les éléments
+    }
+    .img_logo_user img[alt="La Biliothèque d'Hyrule"] {
+      order: -1; // Déplacez l'image au-dessus du texte
+      max-width: 15%; // Limitez la largeur de l'image
+      height: auto; // Garantissez une hauteur proportionnelle
+    }  
+    .logo_text_user {
+      font-size: 1.0em;
+      padding: 10px;
+      margin: 5px;
+    }  
+    .logo_under {
+      display: none;
+    }  
+    .nav_user {
+      display: none; // Masquer la navigation par défaut sur les écrans plus petits
+      flex-direction: column; // Aligner les éléments en colonne
+      position: absolute;
+      top: 35px; // Ajuster la position du menu selon votre conception
+      left: 140px;
+      width: 70%;
+      font-size: 10px;
+      background-color: #E8F6D1;
+      border-radius: 10px;
+      padding: 10px;
+      white-space: nowrap;
+    }
+    .nav_user ul {
+        gap: 10px;
+        margin: 0px;
+        padding: 0px;
+    }  
+    .burger-menu-button {
+      display: block; // Afficher le bouton sur des écrans plus étroits
+      background: none;
+      border: none;
+      cursor: pointer;
+    }  
+    .bar {
+      width: 40px;
+      height: 3px;
+      background-color: #333;
+      margin: 6px 0;
+      transition: 0.4s;
+    }  
+    .menu-open {
+      .nav_user {
+        display: flex; // Afficher la navigation lorsque le bouton est cliqué
+      }
+    }
+  }
+  // ##### SMARTPHONES ####
+  @media (max-width: 425px) {
+    .logos_user {
+      background-color: #E8F6D1;
+      border-radius: 40px;
+      margin: 10px;
+    }  
+    .img_logo_user {
+      align-items: center; // Centrer les éléments
+    }  
+    .img_logo_user img[alt="La Biliothèque d'Hyrule"] {
+      order: -1; // Déplacez l'image au-dessus du texte
+      max-width: 40%; // Limitez la largeur de l'image
+      height: auto; // Garantissez une hauteur proportionnelle
+    }  
+    .logo_text_user {
+      font-size: 1.0em;
+      padding: 10px;
+      margin: 5px;
+    }  
+    .logo_under {
+      display: none;
+    }  
+    .nav_user {
+      display: none; // Masquer la navigation par défaut sur les écrans plus petits
+      flex-direction: column; // Aligner les éléments en colonne
+      position: absolute;
+      top: 80px; // Ajuster la position du menu selon votre conception
+      left: 10px; // Ajuster la position du menu selon votre conception
+      width: 85%; // Ajuster la largeur du menu selon votre conception
+      font-size: 8px;
+      background-color: #E8F6D1;
+      border-radius: 10px;
+      padding-left: 10px;
+    }  
+    .burger-menu-button {
+      display: block; // Afficher le bouton sur des écrans plus étroits
+      background: none;
+      border: none;
+      cursor: pointer;
+    }  
+    .bar {
+      width: 40px;
+      height: 3px;
+      background-color: #333;
+      margin: 6px 0;
+      transition: 0.4s;
+    }  
+    .menu-open {
+      .nav_user {
+        display: flex; // Afficher la navigation lorsque le bouton est cliqué
+      }
+    }
+  }

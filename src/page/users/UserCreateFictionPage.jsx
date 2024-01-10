@@ -1,5 +1,6 @@
 
 import HeaderUsers from "../../component/users/HeaderUsers";
+import Footer from '../../component/guest/Footer';
 import React, { useState } from 'react';
 import "./userCreateFictionPage.scss";
 
@@ -33,13 +34,13 @@ const UserCreateFictionPage = () => {
       });
       if (response.ok) {
         // La mise à jour a réussi, vous pouvez gérer la redirection ou d'autres actions ici
-        setMessage('Mise à jour réussie !');
+        setMessage('Création réussie !');
       } else {
         // La mise à jour a échoué, vous pouvez gérer les erreurs ici
-        console.error('Échec de la mise à jour');
+        console.error('Échec de la création');
       }
     } catch (error) {
-      console.error('Erreur lors de la mise à jour', error);
+      console.error('Erreur lors de la création', error);
     }
   };
 
@@ -66,6 +67,7 @@ const UserCreateFictionPage = () => {
             <button type="submit" className="input">Envoyer</button>
           </form>
         </div>
+        <Footer />
       </main>
     </body>
   );
