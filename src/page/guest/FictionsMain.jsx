@@ -103,8 +103,8 @@ console.log(fiction)
   {fiction.Comments.map((comment) => {
     return(
       <>
-    <p>{comment.User.username}</p>  
-    <p>{comment.comment}</p></>
+    <p>Utilisateur : {comment.User.username}</p>  
+    <p>Commentaire : {comment.comment}</p></>
     )
     
 
