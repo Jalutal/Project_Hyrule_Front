@@ -2,9 +2,9 @@ import HeaderUsers from "../../component/users/HeaderUsers";
 import { useVerifyIfUserIsLogged } from "../../utils/security-utils";
 import "./userDashboard.scss";
 
-const UserDashboard = () => {
+const UserDashboard = ({login, isLogin}) => {
   useVerifyIfUserIsLogged();
-
+  
   return (
     <>
       <body>

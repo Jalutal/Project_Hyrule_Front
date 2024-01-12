@@ -93,6 +93,23 @@ a.nav-link_admin::before {
       display: block; // Afficher le menu lorsque le bouton est cliqué
     }
 }
+// ############## GESTION DU BOUTON DE LOGOUT #################
+.adminLogout {
+  color: antiquewhite;
+  background-color: black;
+  box-shadow: 5px 5px 5px black;
+  border-radius: 10px;
+  padding-top: 3px;
+
+}
+.adminLogout:hover {
+  color: black;
+  background-color: antiquewhite;
+  box-shadow: 5px 5px 5px antiquewhite;
+  border-radius: 10px;
+  padding-top: 3px;
+
+}
 // ################## MEDIA QUERIES POUR LE RESPONSIVE #########################
 // ##### TABLETTES ####
 @media (max-width: 768px) {

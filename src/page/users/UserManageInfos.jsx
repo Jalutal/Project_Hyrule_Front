@@ -12,9 +12,7 @@ const UserManageSelf = () => {
   const [user, setUser] = useState(null);
   const token = localStorage.getItem("jwt");
 
-    useEffect(() => {
-    userFetch();
-    }, []);
+   
 
   const userFetch = async () => {
     if (token) {
@@ -25,6 +23,10 @@ const UserManageSelf = () => {
       console.log(decodedToken.dataId)
     }
   }
+
+  useEffect(() => {
+    userFetch();
+    }, []);
 
   const handleUpdateUser = async (event) => {
     event.preventDefault(); 

@@ -36,7 +36,7 @@ const Login = () => {
   };
 
     return (
-        <body>
+        <body className="body_login">
           <main>
             <div className="main_rectangle">
               <Header />

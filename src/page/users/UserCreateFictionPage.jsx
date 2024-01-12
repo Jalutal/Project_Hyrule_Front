@@ -49,22 +49,27 @@ const UserCreateFictionPage = () => {
       <main>
         <div className="main_rectangle">
           <HeaderUsers />          
-          {message && <p>{message}</p>}
-          <form onSubmit={handleSubmit} className="login_form">
-          <h1 className="login_create">Créer une fiction</h1>
+          {message && <p>{message}</p>}<h1 className="login_create">Créer une fiction</h1>
+          <form onSubmit={handleSubmit} className="login_form_create">
+          
+          <div className="create_left"> 
             <label>
               Nom de la fiction:
               <input type="text" name="fictionname" value={formData.fictionname} onChange={handleChange} />
             </label>
             <label>
-              Histoire:
-              <textarea name="story" value={formData.story}onChange={handleChange}></textarea>
-            </label>
-            <label>
               Categorie:
               <input type="text" name="category" value={formData.category} onChange={handleChange} />
+            </label>    
+            </div>
+            <div>
+            <label>
+              Histoire:
+              <textarea name="story" value={formData.story} onChange={handleChange}></textarea>
             </label>
+            
             <button type="submit" className="input">Envoyer</button>
+            </div>
           </form>
         </div>
         <Footer />

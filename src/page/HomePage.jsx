@@ -3,6 +3,8 @@ import Header from '../component/guest/Header';
 import Footer from '../component/guest/Footer';
 import './HomePage.css';
 
+
+
 const HomePage = () => {
   return (
     <body>
