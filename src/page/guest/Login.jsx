@@ -28,6 +28,7 @@ const Login = () => {
 
     if (token) {
       localStorage.setItem("jwt", token);
+      
       setMessage("Vous êtes bien connecté");
       navigate("/user/");
     } else {

@@ -38,8 +38,7 @@ const FictionsMain = ({ fictionId }) => {
         "Content-Type": "application/json",         
         Authorization: "Bearer " + token,
       },     
-      body: commentToCreateJson,
-      
+      body: commentToCreateJson,      
     });
       console.log(commentToCreate)
 
@@ -54,7 +53,7 @@ const FictionsMain = ({ fictionId }) => {
       alert("Une erreur est survenue. Veullez rééssayer");
     }    
     };
-
+console.log(fiction)
 
   return (
     <>
@@ -62,8 +61,15 @@ const FictionsMain = ({ fictionId }) => {
         <>
         <article>
           <h2>{fiction.fictionname}</h2>
-          <p>{fiction.story}</p>
-
+          <p>Auteur : {fiction.User !== null ?
+              (
+                <p>{fiction.User.username}</p>
+              ) : 
+              (
+                <p>null</p>
+              )  
+        }</p>
+          <p dangerouslySetInnerHTML={{ __html: fiction.story }} className="fic_font"></p>
           {/* <p>Auteur : {fiction.User.username}</p> */}
         </article>
 

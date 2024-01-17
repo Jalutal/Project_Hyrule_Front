@@ -1,9 +1,9 @@
 import HeaderAdmin from "../../component/admin/HeaderAdmin";
-import { useVerifyIfUserIsLogged } from "../../utils/security-utils";
+import { useVerifyIfAdminIsLogged } from "../../utils/security-utils";
 import "./adminDashboard.scss";
 
 const Admin = () => {
-  useVerifyIfUserIsLogged();  
+  useVerifyIfAdminIsLogged();  
 
     return (
       <>

@@ -1,4 +1,5 @@
 @import '../../mixins';
+@import '../../layer';
 // ######### MISE EN PAGE GENERALE VIA MIXINS ###########
 body {
     @include body;
@@ -10,4 +11,8 @@ main {
 .dash_user {
     text-align: center;
     font-size: 1.7em;
+}
+// ######## GESTION DES COULEURS VIA LES VARIABLES #############
+.h1_dashUser {
+    background-color: $header_bg;
 }

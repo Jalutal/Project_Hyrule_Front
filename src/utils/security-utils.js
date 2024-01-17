@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import {jwtDecode} from "jwt-decode";
 
 // je créé une fonction réutilisable,
 // qui au chargement du composant,
@@ -14,6 +15,7 @@ import { useNavigate } from "react-router-dom";
 // => ma fonction est devenue un hook
 
 export const useVerifyIfUserIsLogged = () => {
+
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -22,5 +24,24 @@ export const useVerifyIfUserIsLogged = () => {
     if (!token) {
       navigate("/login");
     }
+  });
+};
+
+export const useVerifyIfAdminIsLogged = () => {
+
+  const navigate = useNavigate();
+  const token = localStorage.getItem("jwt");
+  useEffect(() => {
+    if (token !== null) {
+    const decodedToken = jwtDecode(token);
+    console.log("Decoded Token:", decodedToken);
+    console.log("Role:", decodedToken.role);
+
+    if (!token || decodedToken.role !== 1) {
+      navigate("/login");
+    }
+  } else {
+    navigate("/login")
+  }
   });
 };

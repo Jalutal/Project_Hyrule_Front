@@ -33,10 +33,8 @@ const UserCreateFictionPage = () => {
         body: JSON.stringify(formData)
       });
       if (response.ok) {
-        // La mise à jour a réussi, vous pouvez gérer la redirection ou d'autres actions ici
         setMessage('Création réussie !');
       } else {
-        // La mise à jour a échoué, vous pouvez gérer les erreurs ici
         console.error('Échec de la création');
       }
     } catch (error) {
