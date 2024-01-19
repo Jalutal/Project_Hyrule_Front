@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Header from "../../component/guest/Header";
 import FictionsMain from "./FictionsMain";
 import Footer from '../../component/guest/Footer';
+import "./newFictions.scss";
 
 const NewFictions = () => {
   const [fictions, setFictions] = useState(null);
@@ -39,13 +40,13 @@ const NewFictions = () => {
     <div className="main_rectangle">
       <Header />
       <div className="content-container">
-        <section>
+        <div className='fictions'>
           <h1>Liste des Fictions:</h1>
           <ul>
             {fictions ? (
               <>
                 {fictions.map((fiction) => (
-                  <article key={fiction.id}>
+                  <article key={fiction.id} className='article'>
                     <button onClick={() => handleFictionClick(fiction.id)}>
                       <h3>{fiction.fictionname}</h3>
                       <p>Date de création : {formatDate(fiction.createdAt)}</p>
@@ -57,12 +58,14 @@ const NewFictions = () => {
               <p>En cours de chargement</p>
             )}
           </ul>
-        </section>
-        {selectedFictionId && (
+        </div>
+        
           <div>
-            <FictionsMain fictionId={selectedFictionId} />
+            {selectedFictionId && (
+            <FictionsMain fictionId={selectedFictionId} /> 
+            )}
           </div>
-        )}
+       
       </div>
     </div>
     <Footer />

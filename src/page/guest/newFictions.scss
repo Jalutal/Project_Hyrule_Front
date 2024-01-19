@@ -1,5 +1,40 @@
+.main_rectangle {
+  overflow-y: auto;
+}
+.content-container {
+  overflow-y: auto;
+}
 /* ################## MEDIA QUERIES POUR LE RESPONSIVE ######################### */
 /* ##### SMARTPHONES #### */
+@media (max-width: 768px) {
+  .content-container {
+    display: flex;
+    flex-direction: column;
+  }
+  .fictions {
+    margin: auto
+  }
+  .fictions button {
+    padding: 5px;
+  }
+  .article {
+    text-align: center;
+  }
+ 
+}
 @media (max-width: 425px) {
-    
+    .content-container {
+      display: flex;
+      flex-direction: column;
+    }
+    .fictions {
+      margin: auto
+    }
+    .fictions button {
+      padding: 5px;
+    }
+    .article {
+      text-align: center;
+    }
+   
   }

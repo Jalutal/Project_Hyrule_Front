@@ -1,3 +1,5 @@
+@import '../../sass/abstracts/variables';
+
 // ############### AGENCEMENT DU HEADER : LOGO ET BARRE NAV #################
 .header_user {
     display: flex;
@@ -6,8 +8,8 @@
 }
 // ############### SECTION LOGO : PARTIE DU HEADER DE GAUCHE @ LOGO & TITLE ##################
 .logos_user {
-    background-color: #E8F6D1;
-    border-radius: 40px;
+    background-color: $background_color;
+    border-radius: $border-radius-40;
     margin: 10px;
 }
 .logo_text_user {
@@ -21,7 +23,7 @@
     display: flex;
     margin: 10px;
     border-radius: 100px;
-    max-width: 100px;    
+    max-width: $max-width;    
     filter: drop-shadow(2px 2px 2px green);
     -webkit-transition: .3s ease-in-out;
 	transition: .3s ease-in-out;
@@ -31,12 +33,17 @@
 	transform: scale(1.1);
 }
 // ################ SECTION NAV : PARTIE DU HEADER DE DROITE @ BARRE NAV ###############
+.li_nav_user {
+  display: flex;
+  justify-content: center;
+}
+
 .nav_user ul {
     display: flex;
     align-items: center;
     list-style-type: none;
-    background-color: #E8F6D1;
-    border-radius: 40px;
+    background-color: $background_color;
+    border-radius: $border-radius-40;
     margin: 10px;
     padding-left: 10px;
     font-size: 1.8em;
@@ -47,17 +54,20 @@
 }
 a.nav-link_user {
     text-decoration: none;
-    color: black;
+    color: $color_black;
+    padding-right: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 a.nav-link-last_user img {
-    -webkit-transform: scale(1);
+  -webkit-transform: scale(1);
 	transform: scale(1);
 	-webkit-transition: .3s ease-in-out;
 	transition: .3s ease-in-out;
 }
 // ############## GESTION DU HOVER/AFTER POUR L'EFFET DOUBLE BARRE #################
 a.nav-link-last_user img:hover {
-    -webkit-transform: scale(1.1);
+  -webkit-transform: scale(1.1);
 	transform: scale(1.1);
 }
 a.nav-link_user:hover::after {
@@ -68,7 +78,7 @@ a.nav-link_user::after {
     display: block;
     width: 0;
     height: 3px;
-    background-color: orange;
+    background-color: $background_orange;
     transition: all 0.2s ease;
 }
 a.nav-link_user:hover::before {    
@@ -79,40 +89,45 @@ a.nav-link_user::before {
     display: block;
     width: 0;
     height: 3px;
-    background-color: orange;
+    background-color: $background_orange;
     transition: all 0.2s ease;
 }
 // ############## GESTION DU BOUTON DE LOGOUT #################
 .userLogout {
-    color: antiquewhite;
-    background-color: black;
-    box-shadow: 5px 5px 5px black;
-    border-radius: 10px;
+    color: $background_color;
+    background-color: $color_black;
+    box-shadow: 5px 5px 5px $color_black;
+    border-radius: $border-radius-10;
     padding-top: 3px;
+    margin-right: 15px;
+
 
 }
 .userLogout:hover {
-    color: black;
-    background-color: antiquewhite;
-    box-shadow: 5px 5px 5px antiquewhite;
-    border-radius: 10px;
+    color: $color_black;
+    background-color:  $background_color;
+    box-shadow: 5px 5px 5px $background_color;
+    border-radius: $border-radius-10;
     padding-top: 3px;
 
 }
 // ################## MEDIA QUERIES POUR LE RESPONSIVE #########################
 // ##### TABLETTES ####
 @media (max-width: 768px) {
-    .logos_user {
-      background-color: #E8F6D1;
-      border-radius: 40px;
+   
+  
+  .logos_user {
+      background-color: $background_color;
+      border-radius: $border-radius-40;
       margin: 10px;
+      max-width: 30%;
     }
     .img_logo_user {        
         align-items: center; // Centrer les éléments
     }
     .img_logo_user img[alt="La Biliothèque d'Hyrule"] {
       order: -1; // Déplacez l'image au-dessus du texte
-      max-width: 15%; // Limitez la largeur de l'image
+      max-width: 90%; // Limitez la largeur de l'image
       height: auto; // Garantissez une hauteur proportionnelle
     }  
     .logo_text_user {
@@ -131,8 +146,8 @@ a.nav-link_user::before {
       left: 140px;
       width: 70%;
       font-size: 10px;
-      background-color: #E8F6D1;
-      border-radius: 10px;
+      background-color: $background_color;
+      border-radius: $border-radius-10;
       padding: 10px;
       white-space: nowrap;
     }
@@ -163,16 +178,17 @@ a.nav-link_user::before {
   // ##### SMARTPHONES ####
   @media (max-width: 425px) {
     .logos_user {
-      background-color: #E8F6D1;
-      border-radius: 40px;
+      background-color: $background_color;
+      border-radius: $border-radius-40;
       margin: 10px;
+      max-width: 60%;
     }  
     .img_logo_user {
       align-items: center; // Centrer les éléments
     }  
     .img_logo_user img[alt="La Biliothèque d'Hyrule"] {
       order: -1; // Déplacez l'image au-dessus du texte
-      max-width: 40%; // Limitez la largeur de l'image
+      max-width: 90%; // Limitez la largeur de l'image
       height: auto; // Garantissez une hauteur proportionnelle
     }  
     .logo_text_user {
@@ -191,8 +207,8 @@ a.nav-link_user::before {
       left: 10px; // Ajuster la position du menu selon votre conception
       width: 85%; // Ajuster la largeur du menu selon votre conception
       font-size: 8px;
-      background-color: #E8F6D1;
-      border-radius: 10px;
+      background-color: $background_color;
+      border-radius: $border-radius-10;
       padding-left: 10px;
     }  
     .burger-menu-button {

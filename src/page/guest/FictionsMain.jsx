@@ -69,7 +69,9 @@ console.log(fiction)
                 <p>null</p>
               )  
         }</p>
-          <p dangerouslySetInnerHTML={{ __html: fiction.story }} className="fic_font"></p>
+          <div className="fic_font-container">
+    <p dangerouslySetInnerHTML={{ __html: fiction.story }} className="fic_font"></p>
+</div>
           {/* <p>Auteur : {fiction.User.username}</p> */}
         </article>
 
@@ -91,7 +93,7 @@ console.log(fiction)
 
     <form onSubmit={(event) => handleCreateComment(event, fiction.id)} className="comments_create">                  
       <label>
-        <p>Commentaire  :</p> 
+        <p>Laissez votre commentaire  :</p> 
         <textarea  type="text" name="comment" />
       </label>
       <input type="submit" className="comment_submit"/>

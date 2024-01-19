@@ -1,6 +1,7 @@
 import "./headerAdmin.scss";
 import React, { useState } from 'react';
 import { useNavigate } from "react-router-dom";
+import logo from '../../assets/img/aef1968f-9bee-411c-b98e-c688c8aa9eb9.jpeg';
 
 const Header = () => {
 
@@ -25,7 +26,7 @@ const Header = () => {
         <div className="logos_admin">
           <div className="img_logo_admin">
             <a href="/">
-              <img src="/assets/img/aef1968f-9bee-411c-b98e-c688c8aa9eb9.jpeg" alt="La Biliothèque d'Hyrule" />
+              <img src={logo} alt="La Biliothèque d'Hyrule" />
             </a>
             <a href="/" className="nav-link_admin">
               <p className="logo_text_admin">La Bibliotheque d'Hyrule </p>

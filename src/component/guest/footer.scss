@@ -1,3 +1,4 @@
+@import '../../sass/abstracts/variables';
 // ########### AGENCEMENT DU FOOTER ################
 .footer div {
     position: fixed;
@@ -10,6 +11,6 @@
 // ################# SUPPRESSION SOULIGNAGE ET COULEUR FIXE #############
 a.nav-link_footer {
     text-decoration: none;
-    color: black;
-    font-size: 1.1em;
+    color: $color_black;
+    font-size: 1.2em;
 }

@@ -1,6 +1,8 @@
 import "./headerUsers.scss";
 import React, { useState } from 'react';
 import { useNavigate } from "react-router-dom";
+import logo from '../../assets/img/aef1968f-9bee-411c-b98e-c688c8aa9eb9.jpeg';
+
 
 const Header = () => {
 
@@ -24,8 +26,8 @@ const Header = () => {
       <div className={`header_user ${menuOpen ? 'menu-open' : ''}`}>
         <div className="logos_user">
           <div className="img_logo_user">
-            <a href="/">
-              <img src="/assets/img/aef1968f-9bee-411c-b98e-c688c8aa9eb9.jpeg" alt="La Biliothèque d'Hyrule" />
+            <a href="/" className="img_left">
+              <img src={logo} alt="La Biliothèque d'Hyrule" />
             </a>
             <a href="/" className="nav-link_user">
               <p className="logo_text_user">La Bibliotheque d'Hyrule </p>

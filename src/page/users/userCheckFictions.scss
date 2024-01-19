@@ -1,4 +1,4 @@
-@import '../../mixins';
+@import '../../sass/abstracts/mixins';
 // ######### MISE EN PAGE GENERALE VIA MIXINS ###########
 body {
     @include body;

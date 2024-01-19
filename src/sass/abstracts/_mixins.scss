@@ -1,0 +1,58 @@
+@import '../../sass/abstracts/variables';
+
+@mixin body {
+    background-image: url('../../assets/img/ddwclak-59689728-e646-48cc-bfd6-20f86065e42a.png');
+    background-size: cover;
+    font-family: "Hylia";
+    overflow:hidden; 
+    height: 100vh;
+    @media (max-width: 768px) {
+        background-image: url('/assets/img/001.jpg');
+    }
+}
+
+@mixin main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+@mixin content-container {
+    display: flex;
+    width: 95%;
+    padding-left: 15px;
+    gap: 55px;
+    overflow: auto; 
+}
+
+@mixin content-container-section {
+    flex-basis: 8%;
+}
+
+@mixin content-container-button {
+    border: none;
+    background-color: $background_color;
+    border-radius: $border-radius-10;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    max-height: 100px; 
+    overflow: hidden; 
+}
+
+@mixin content-container-h3 {
+    font-family: "Hylia";
+    overflow: hidden; 
+    white-space: nowrap;
+}
+
+@mixin main_rectangle {    
+    width: 98%;
+    height: 95vh;
+    background: rgba(255, 255, 255, 0.28);
+    border-radius: 15px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(8.5px);
+    border: 1px solid rgba(255, 255, 255, 0.01);    
+}

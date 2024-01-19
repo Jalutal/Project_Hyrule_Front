@@ -1,3 +1,4 @@
+@import '../../sass/abstracts/variables';
 // ############### AGENCEMENT DU HEADER : LOGO ET BARRE NAV #################
 .header_guest {
     display: flex;
@@ -6,61 +7,67 @@
 }
 // ############### SECTION LOGO : PARTIE DU HEADER DE GAUCHE @ LOGO & TITLE ##################
 .logos_guest {
-    background-color: #E8F6D1;
-    border-radius: 40px;
-    margin: 10px;
+  background-color: $background_color;
+  border-radius: $border-radius-40;
+  margin: 10px;
 }
 .logo_text_guest {
-    font-size: 1.8em;
+  font-size: 1.8em;
 }
 .logo_under {
-    font-size: 1.0em;
+  font-size: 1.0em;
 }
 .img_logo_guest {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 .img_logo_guest img {
-    display: flex;
-    margin: 10px;
-    border-radius: 100px;
-    max-width: 100px;    
-    filter: drop-shadow(2px 2px 2px green);
-    -webkit-transition: .3s ease-in-out;
+  display: flex;
+  margin: 10px;
+  border-radius: 100px;
+  max-width: $max-width;    
+  filter: drop-shadow(2px 2px 2px green);
+  -webkit-transition: .3s ease-in-out;
 	transition: .3s ease-in-out;
 }
 .img_logo_guest img:hover {
-    -webkit-transform: scale(1.1);
+  -webkit-transform: scale(1.1);
 	transform: scale(1.1);
 }
 // ################ SECTION NAV : PARTIE DU HEADER DE DROITE @ BARRE NAV ###############
+
+.li_nav_guest {
+  display: flex;
+  justify-content: center
+}
 .nav_guest ul {
     display: flex;
     align-items: center;
     list-style-type: none;
-    background-color: #E8F6D1;
-    border-radius: 40px;
+    background-color: $background_color;
+    border-radius: $border-radius-10;
     margin: 10px;
     padding-left: 10px;
     font-size: 1.8em;
     gap: 40px;
 }
 .nav_guest ul li img {
-    max-width: 100px;
+    max-width: $max-width;
 }
 a.nav-link_guest {
     text-decoration: none;
-    color: black;
+    color: $color_black;
+    padding-right: 10px;
 }
 a.nav-link-last_guest img {
-    -webkit-transform: scale(1);
+  -webkit-transform: scale(1);
 	transform: scale(1);
 	-webkit-transition: .3s ease-in-out;
 	transition: .3s ease-in-out;
 }
 // ############## GESTION DU HOVER/AFTER POUR L'EFFET DOUBLE BARRE #################
 a.nav-link-last_guest img:hover {
-    -webkit-transform: scale(1.1);
+  -webkit-transform: scale(1.1);
 	transform: scale(1.1);
 }
 a.nav-link_guest:hover::after {
@@ -71,7 +78,7 @@ a.nav-link_guest::after {
     display: block;
     width: 0;
     height: 3px;
-    background-color: orange;
+    background-color: $background_orange;
     transition: all 0.2s ease;
 }
 a.nav-link_guest:hover::before {    
@@ -82,7 +89,7 @@ a.nav-link_guest::before {
     display: block;
     width: 0;
     height: 3px;
-    background-color: orange;
+    background-color: $background_orange;
     transition: all 0.2s ease;
 }
 .burger-menu-button {
@@ -97,9 +104,10 @@ a.nav-link_guest::before {
 // ##### TABLETTES ####
 @media (max-width: 768px) {
     .logos_guest {
-      background-color: #E8F6D1;
-      border-radius: 40px;
+      background-color: $background_color;
+      border-radius: $border-radius-40;
       margin: 10px;
+      max-width: 30%;
     }
     .img_logo_guest {
         
@@ -107,7 +115,7 @@ a.nav-link_guest::before {
     }
     .img_logo_guest img[alt="La Biliothèque d'Hyrule"] {
       order: -1; // Déplacez l'image au-dessus du texte
-      max-width: 15%; // Limitez la largeur de l'image
+      max-width: 90%; // Limitez la largeur de l'image
       height: auto; // Garantissez une hauteur proportionnelle
     }  
     .logo_text_guest {
@@ -126,8 +134,8 @@ a.nav-link_guest::before {
       left: 165px;
       width: 70%;
       font-size: 10px;
-      background-color: #E8F6D1;
-      border-radius: 10px;
+      background-color: $background_color;
+      border-radius: border-radius-10;
       padding-left: 10px;
     }
     .nav_guest ul {
@@ -160,9 +168,10 @@ a.nav-link_guest::before {
 // ##### SMARTPHONES ####
   @media (max-width: 425px) {
     .logos_guest {
-      background-color: #E8F6D1;
-      border-radius: 40px;
+      background-color: $background_color;
+      border-radius: $border-radius-40;
       margin: 10px;
+      max-width: 50%;
     }
   
     .img_logo_guest {
@@ -171,7 +180,7 @@ a.nav-link_guest::before {
   
     .img_logo_guest img[alt="La Biliothèque d'Hyrule"] {
       order: -1; // Déplacez l'image au-dessus du texte
-      max-width: 40%; // Limitez la largeur de l'image
+      max-width: 90%; // Limitez la largeur de l'image
       height: auto; // Garantissez une hauteur proportionnelle
     }
   
@@ -189,12 +198,12 @@ a.nav-link_guest::before {
       display: none; // Masquer la navigation par défaut sur les écrans plus petits
       flex-direction: column; // Aligner les éléments en colonne
       position: absolute;
-      top: 13px; // Ajuster la position du menu selon votre conception
-      left:1px; // Ajuster la position du menu selon votre conception
-      width: 90%; // Ajuster la largeur du menu selon votre conception
+      top: 110px; // Ajuster la position du menu selon votre conception
+      left:5px; // Ajuster la position du menu selon votre conception
+      width: 100%; // Ajuster la largeur du menu selon votre conception
       font-size: 10px;
-      background-color: #E8F6D1;
-      border-radius: 10px;
+      background-color: $background_color;
+      border-radius: $border-radius-10;
       padding-left: 10px;
     }
   

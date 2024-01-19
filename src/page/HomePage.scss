@@ -1,19 +1,8 @@
-@font-face {
-    font-family: "Hylia";
-    src: url(/assets/fonts/HyliaSerifBeta-Regular.otf);
-}
-* {
-    margin: 0;
-    padding: 0;
-}
-body {
-    overflow-x: hidden;
-  }
+@import '../sass/abstracts/_variables.scss';
+@import '../sass/abstracts/_typographie.scss';
+@import '../sass/base/_reset.scss';
+
 /* ######## PRESENTATION DU SITE ############ */
-.main_rectangle {
-    overflow-y: auto;
-    overflow-x: hidden;
-  }
 .main_section {
     display: flex;
     justify-content: space-around;
@@ -61,8 +50,8 @@ body {
 }
 .bloc_main {
     width: 65%;
-    border-bottom: 2px solid antiquewhite;
-    border-right: 2px solid antiquewhite;
+    border-bottom: 2px solid $background_color;
+    border-right: 2px solid $background_color;
     border-radius: 20px;
     order: 0;
 }
@@ -73,7 +62,7 @@ body {
 }
 .link_homePage {
     text-decoration: none;
-    color: black;
+    color: $color_black;
 }
 .content_mentions {
     list-style-type: none;
@@ -86,3 +75,14 @@ body {
     }  
   }
 /* ##### SMARTPHONES #### */
+@media (max-width: 425px) {
+    .bloc_main {
+        width: 65%;
+        max-height: 300px;
+        overflow-y: auto;
+        border-bottom: 2px solid $background_color;
+        border-right: 2px solid $background_color;
+        border-radius: 20px;
+        order: 0;
+    }
+}

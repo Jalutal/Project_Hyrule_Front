@@ -1,4 +1,5 @@
-@import '../../mixins';
+@import '../../sass/abstracts/mixins';
+@import '../../sass/abstracts/variables';
 // ######### MISE EN PAGE GENERALE VIA MIXINS ###########
 body {
     @include body;
@@ -7,7 +8,39 @@ main {
     @include main;
 }
 // ######### CENTRAGE DU TEXTE + TAILLE POLICE ############
+.h1_dash_admin {
+    background-color: $background_color;
+    padding: 10px;
+    border-radius: 30px;
+    text-align: center;
+    font-size: 1.7em;
+    padding: 20px;
+    width: 25%;
+    margin: auto;
+}
 .dash_admin {
     text-align: center;
     font-size: 1.7em;
+    padding: 20px;
+}
+// ################## MEDIA QUERIES POUR LE RESPONSIVE #########################
+// ##### TABLETTES ####
+@media (max-width: 768px) {
+    .h1_dash_admin {
+        width: 45%;
+        font-size: 1.2em;
+    } 
+    .dash_admin {
+        font-size: 1em;
+    } 
+}
+// ##### SMARTPHONES ####
+@media (max-width: 425px) {
+    .h1_dash_admin {
+        width: 75%;
+        font-size: 1.2em;
+    } 
+    .dash_admin {
+        font-size: 1em;
+    } 
 }

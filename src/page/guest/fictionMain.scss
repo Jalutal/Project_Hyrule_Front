@@ -2,8 +2,12 @@
 .comments {
     margin-top: 10px;
 }
+.comments h2 {
+    margin-bottom: 5px;
+}
 .comments_create {
     display: flex;
+    flex-direction: column;
 }
 .comment_spacer {
     margin-bottom: 10px;
@@ -15,7 +19,37 @@
     border-radius: 15px;
     padding-left: 5px;
     padding-right: 5px;
+    width: 5%;
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+.fic_font-container {
+    
+    overflow-y: auto;    /* Active la barre de défilement verticale si le contenu dépasse la hauteur */
 }
 .fic_font {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+
+     
+}
+/* ################## MEDIA QUERIES POUR LE RESPONSIVE ######################### */
+/* ##### SMARTPHONES #### */
+@media (max-width: 768px) {
+    .comment_submit {
+        width: 20%;
+    }
+    .fic_font {
+        white-space: normal; /* Permet au texte de se retourner */
+        overflow-x: hidden;  /* Désactive la barre de défilement horizontale */
+        overflow-y: auto;    /* Active la barre de défilement verticale si le contenu dépasse la hauteur */
+        max-height: 500px;   /* Spécifie la hauteur maximale avant que la barre de défilement verticale apparaisse */
+      }
+}
+@media (max-width: 425px) {
+
+    .fic_font {
+        overflow-x: hidden;  /* Désactive la barre de défilement horizontale */
+        max-height: 800px;
+    }
 }

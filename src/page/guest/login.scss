@@ -1,4 +1,5 @@
-@import '../../mixins';
+@import '../../sass/abstracts/mixins';
+@import '../../sass/abstracts/variables';
 // ######### MISE EN PAGE GENERALE VIA MIXINS ###########
 body {
     @include body;
@@ -28,12 +29,13 @@ main {
 }
 .login_conn_create {
     text-align: center;
-    margin-top: 25px;
+    margin-top: 35px;
+    font-size: 1.7em;
     position: relative; /* Ajout de la position relative */
 }
 .login_conn_create a {
     text-decoration: none;
-    color: black;
+    color: $color_black;
     position: relative; /* Ajout de la position relative */
 }
 // ######### EFFET AFTER SUR LE LIEN DE CREATION ######
@@ -42,7 +44,7 @@ a.login_a::after {
     display: block;
     width: 0; /* Assurez-vous de définir la largeur à 0 initialement */
     height: 3px;
-    background-color: orange;
+    background-color: $background_orange;
     transition: all 0.2s ease;
     position: absolute;
     bottom: 0;

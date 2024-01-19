@@ -1,5 +1,5 @@
-@import '../../mixins';
-@import '../../layer';
+@import '../../sass/abstracts/mixins';
+@import '../../sass/abstracts/variables';
 // ######### MISE EN PAGE GENERALE VIA MIXINS ###########
 body {
     @include body;
@@ -11,8 +11,37 @@ main {
 .dash_user {
     text-align: center;
     font-size: 1.7em;
+    padding: 20px;
 }
-// ######## GESTION DES COULEURS VIA LES VARIABLES #############
 .h1_dashUser {
-    background-color: $header_bg;
+    text-align: center;
+    font-size: 1.7em;
+    padding: 20px;
+    width: 25%;
+    margin: auto;
+// ######## GESTION DES COULEURS VIA LES VARIABLES #############
+    background-color: $background_color;
+    padding: 10px;
+    border-radius: 30px;
+}
+// ################## MEDIA QUERIES POUR LE RESPONSIVE #########################
+// ##### TABLETTES ####
+@media (max-width: 768px) {
+    .h1_dashUser {
+        width: 45%;
+        font-size: 1.2em;
+    } 
+    .dash_user {
+        font-size: 1em;
+    } 
+}
+// ##### SMARTPHONES ####
+@media (max-width: 425px) {
+    .h1_dashUser {
+        width: 75%;
+        font-size: 1.2em;
+    } 
+    .dash_user {
+        font-size: 1em;
+    } 
 }

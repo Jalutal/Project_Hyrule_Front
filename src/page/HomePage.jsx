@@ -1,7 +1,8 @@
 import React from 'react';
 import Header from '../component/guest/Header';
 import Footer from '../component/guest/Footer';
-import './HomePage.css';
+import './HomePage.scss';
+import img from "../assets/img/portraits/zelda-botw-1568662408004_v2_4x3.jpg"
 
 
 
@@ -20,7 +21,7 @@ const HomePage = () => {
             </div>
             <a href="/login" className='link_homePage'>
             <div className="bloc_news">
-              <img src="/assets/img/portraits/zelda-botw-1568662408004_v2_4x3.jpg" alt="" />
+              <img src={img} alt="La Bibliotheque d'hyrule" />
               <h2>Toi aussi publie ton histoire !</h2>
               <p>Découvre notre communauté et partage tes créations ou découvre celles des autres.</p>
             </div>
