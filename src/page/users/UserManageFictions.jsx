@@ -1,10 +1,8 @@
 import HeaderUsers from "../../component/users/HeaderUsers";
-
 import { useVerifyIfUserIsLogged } from "../../utils/security-utils";
 
 const UserManageFictions = () => {
-  useVerifyIfUserIsLogged();
-  
+  useVerifyIfUserIsLogged();  
         return (
             <>
             <body>

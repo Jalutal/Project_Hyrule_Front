@@ -23,15 +23,11 @@
     font-size: 1.2em;
     margin-bottom: 20px;
 }
-.fic_font-container {
-    
+.fic_font-container {    
     overflow-y: auto;    /* Active la barre de défilement verticale si le contenu dépasse la hauteur */
 }
 .fic_font {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-
-
-     
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;     
 }
 /* ################## MEDIA QUERIES POUR LE RESPONSIVE ######################### */
 /* ##### SMARTPHONES #### */
@@ -40,16 +36,16 @@
         width: 20%;
     }
     .fic_font {
-        white-space: normal; /* Permet au texte de se retourner */
+        white-space: normal; 
         overflow-x: hidden;  /* Désactive la barre de défilement horizontale */
         overflow-y: auto;    /* Active la barre de défilement verticale si le contenu dépasse la hauteur */
-        max-height: 500px;   /* Spécifie la hauteur maximale avant que la barre de défilement verticale apparaisse */
+        max-height: 500px;   
       }
 }
 @media (max-width: 425px) {
 
     .fic_font {
-        overflow-x: hidden;  /* Désactive la barre de défilement horizontale */
+        overflow-x: hidden; 
         max-height: 800px;
     }
 }

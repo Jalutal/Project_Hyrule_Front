@@ -4,8 +4,6 @@ import Footer from '../component/guest/Footer';
 import './HomePage.scss';
 import img from "../assets/img/portraits/zelda-botw-1568662408004_v2_4x3.jpg"
 
-
-
 const HomePage = () => {
   return (
     <body>

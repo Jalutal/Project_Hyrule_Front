@@ -12,7 +12,8 @@ const FictionsMain = ({ fictionId }) => {
         const fictionResponse = await fetch(`http://localhost:3000/api/fanfics/${fictionId}`);
         const fictionResponseData = await fictionResponse.json();
         setFiction(fictionResponseData.data);
-      } catch (error) {
+      } 
+      catch (error) {
         console.error('Erreur lors de la récupération de la fiction:', error);
       }
     };
@@ -27,33 +28,28 @@ const FictionsMain = ({ fictionId }) => {
       comment: comment,      
       FanficId: fiction.id,
       UserId: decodedToken.dataId,
-    };
-    console.log(decodedToken)
-    console.log(commentToCreate)     
+    };     
     const commentToCreateJson = JSON.stringify(commentToCreate);    
-    try {
-      const commentResponse = await fetch("http://localhost:3000/api/comments" , {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",         
-        Authorization: "Bearer " + token,
-      },     
-      body: commentToCreateJson,      
-    });
-      console.log(commentToCreate)
-
-    if (commentResponse.ok) {   
-      alert("Commentaire créé.");      
-      window.location.reload();
-    } else {
-      alert("Le commentaire n'as pu être créé. Veuillez rééssayer. ");
-    }
-
-    } catch (error) {
+      try {
+        const commentResponse = await fetch("http://localhost:3000/api/comments" , {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",         
+          Authorization: "Bearer " + token,
+        },     
+        body: commentToCreateJson,      
+        });
+        if (commentResponse.ok) {   
+          alert("Commentaire créé.");      
+          window.location.reload();
+        } else {
+          alert("Le commentaire n'as pu être créé. Veuillez rééssayer. ");
+        }
+      } 
+      catch (error) {
       alert("Une erreur est survenue. Veullez rééssayer");
-    }    
+      }    
     };
-console.log(fiction)
 
   return (
     <>
@@ -64,53 +60,40 @@ console.log(fiction)
           <p>Auteur : {fiction.User !== null ?
               (
                 <p>{fiction.User.username}</p>
-              ) : 
-              (
+              ) : (
                 <p>null</p>
               )  
-        }</p>
+          }</p>
           <div className="fic_font-container">
-    <p dangerouslySetInnerHTML={{ __html: fiction.story }} className="fic_font"></p>
-</div>
-          {/* <p>Auteur : {fiction.User.username}</p> */}
+            <p dangerouslySetInnerHTML={{ __html: fiction.story }} className="fic_font"></p>
+          </div>        
         </article>
-
-<article className="comments">
-<h2>Les commentaires : </h2>
-{fiction.Comments.length > 0 && (
-  <article>
-  {fiction.Comments.map((comment) => {
-    return(
-      <>
-    <p><span className="comment_underline">Utilisateur</span> : {comment.User.username}</p>  
-    <p className="comment_spacer"><span className="comment_underline">Commentaire</span> : {comment.comment}</p></>
-    )
-    
-
-})} </article>
-) }
-    
-
-    <form onSubmit={(event) => handleCreateComment(event, fiction.id)} className="comments_create">                  
-      <label>
-        <p>Laissez votre commentaire  :</p> 
-        <textarea  type="text" name="comment" />
-      </label>
-      <input type="submit" className="comment_submit"/>
-    </form>
-  </article>
-</>
-
+        <article className="comments">
+          <h2>Les commentaires : </h2>
+            {fiction.Comments.length > 0 && (
+            <article>
+              {fiction.Comments.map((comment) => {
+                return(
+                  <>
+                  <p><span className="comment_underline">Utilisateur</span> : {comment.User.username}</p>  
+                  <p className="comment_spacer"><span className="comment_underline">Commentaire</span> : {comment.comment}</p>
+                  </>
+                )   
+              })}
+            </article>
+            )}
+            <form onSubmit={(event) => handleCreateComment(event, fiction.id)} className="comments_create">                  
+              <label>
+                <p>Laissez votre commentaire  :</p> 
+                <textarea  type="text" name="comment" />
+              </label>
+              <input type="submit" className="comment_submit"/>
+            </form>
+        </article>
+        </>
       ) : (
         <p>En cours de chargement</p>
-
-
-
       )}
-      
-                      
-
-
     </>
   );
 };

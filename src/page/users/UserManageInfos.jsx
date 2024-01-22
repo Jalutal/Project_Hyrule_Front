@@ -10,9 +10,7 @@ const UserManageSelf = () => {
 
   const [message, setMessage] = useState(null);
   const [user, setUser] = useState(null);
-  const token = localStorage.getItem("jwt");
-
-   
+  const token = localStorage.getItem("jwt");   
 
   const userFetch = async () => {
     if (token) {

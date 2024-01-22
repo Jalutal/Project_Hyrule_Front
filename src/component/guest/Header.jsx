@@ -9,7 +9,6 @@ const Header = () => {
     setMenuOpen(!menuOpen);
 };
 
-
     return(
         <header>
       <div className={`header_guest ${menuOpen ? 'menu-open' : ''}`}>

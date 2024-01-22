@@ -110,7 +110,6 @@ a.nav-link_admin::before {
   border-radius: $border-radius-10;
   padding-top: 3px;
   margin-right: 15px;
-
 }
 .adminLogout:hover {
   color: $color_black;
@@ -118,7 +117,6 @@ a.nav-link_admin::before {
   box-shadow: 5px 5px 5px $background_color;
   border-radius: $border-radius-10;
   padding-top: 3px;
-
 }
 // ################## MEDIA QUERIES POUR LE RESPONSIVE #########################
 // ##### TABLETTES ####
@@ -130,12 +128,12 @@ a.nav-link_admin::before {
       max-width: 30%;
     }
     .img_logo_admin {        
-        align-items: center; // Centrer les éléments
+        align-items: center;
     }
     .img_logo_admin img[alt="La Biliothèque d'Hyrule"] {
-      order: -1; // Déplacez l'image au-dessus du texte
-      max-width: 90%; // Limitez la largeur de l'image
-      height: auto; // Garantissez une hauteur proportionnelle
+      order: -1;
+      max-width: 90%;
+      height: auto;
     }  
     .logo_text_admin {
       font-size: 1.0em;
@@ -146,10 +144,10 @@ a.nav-link_admin::before {
       display: none;
     }  
     .nav_admin {
-      display: none; // Masquer la navigation par défaut sur les écrans plus petits
-      flex-direction: column; // Aligner les éléments en colonne
+      display: none;
+      flex-direction: column;
       position: absolute;
-      top: 35px; // Ajuster la position du menu selon votre conception
+      top: 35px;
       left: 110px;
       width: 70%;
       font-size: 10px;
@@ -164,7 +162,7 @@ a.nav-link_admin::before {
         padding: 0px;
     }  
     .burger-menu-button {
-      display: block; // Afficher le bouton sur des écrans plus étroits
+      display: block;
       background: none;
       border: none;
       cursor: pointer;
@@ -178,7 +176,7 @@ a.nav-link_admin::before {
     }  
     .menu-open {
       .nav_admin {
-        display: flex; // Afficher la navigation lorsque le bouton est cliqué
+        display: flex;
       }
     }
   }
@@ -191,12 +189,12 @@ a.nav-link_admin::before {
       max-width: 60%;
     }  
     .img_logo_admin {
-      align-items: center; // Centrer les éléments
+      align-items: center;
     }  
     .img_logo_admin img[alt="La Biliothèque d'Hyrule"] {
-      order: -1; // Déplacez l'image au-dessus du texte
-      max-width: 90%; // Limitez la largeur de l'image
-      height: auto; // Garantissez une hauteur proportionnelle
+      order: -1;
+      max-width: 90%;
+      height: auto;
     }  
     .logo_text_admin {
       font-size: 1.0em;
@@ -207,19 +205,19 @@ a.nav-link_admin::before {
       display: none;
     }  
     .nav_admin {
-      display: none; // Masquer la navigation par défaut sur les écrans plus petits
-      flex-direction: column; // Aligner les éléments en colonne
+      display: none; 
+      flex-direction: column;
       position: absolute;
-      top: 110px; // Ajuster la position du menu selon votre conception
-      left: 0px; // Ajuster la position du menu selon votre conception
-      width: 100%; // Ajuster la largeur du menu selon votre conception
+      top: 110px;
+      left: 0px; 
+      width: 100%; 
       font-size: 10px;
       background-color: $background_color;
       border-radius: $border-radius-10;
       padding-left: 10px;
     }  
     .burger-menu-button {
-      display: block; // Afficher le bouton sur des écrans plus étroits
+      display: block; 
       background: none;
       border: none;
       cursor: pointer;
@@ -233,7 +231,7 @@ a.nav-link_admin::before {
     }  
     .menu-open {
       .nav_admin {
-        display: flex; // Afficher la navigation lorsque le bouton est cliqué
+        display: flex;
       }
     }
   }

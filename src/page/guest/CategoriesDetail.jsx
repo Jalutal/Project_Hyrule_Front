@@ -12,7 +12,6 @@ const CategoriesDetail = ({ category }) => {
       try {
         const allFictionsResponse = await fetch('http://localhost:3000/api/fanfics');
         const allFictionsResponseData = await allFictionsResponse.json();
-
         if (allFictionsResponseData) {
           setAllFictions(allFictionsResponseData);
         } else {
@@ -22,7 +21,6 @@ const CategoriesDetail = ({ category }) => {
         console.error('Erreur lors de la récupération de toutes les fictions:', error);
       }
     };
-
     fetchAllFictions();
   }, []);
 

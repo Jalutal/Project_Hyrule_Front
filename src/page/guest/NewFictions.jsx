@@ -59,13 +59,11 @@ const NewFictions = () => {
             )}
           </ul>
         </div>
-        
-          <div>
-            {selectedFictionId && (
-            <FictionsMain fictionId={selectedFictionId} /> 
-            )}
-          </div>
-       
+        <div>
+          {selectedFictionId && (
+          <FictionsMain fictionId={selectedFictionId} /> 
+          )}
+        </div>
       </div>
     </div>
     <Footer />

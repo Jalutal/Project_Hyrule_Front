@@ -5,7 +5,6 @@ import logo from '../../assets/img/aef1968f-9bee-411c-b98e-c688c8aa9eb9.jpeg';
 
 
 const Header = () => {
-
     const navigate = useNavigate();
 
     const [menuOpen, setMenuOpen] = useState(false);
@@ -19,7 +18,6 @@ const Header = () => {
     // redirige l'utilisateur vers la page de login
     navigate("/login");
     };
-
 
     return(
         <header>

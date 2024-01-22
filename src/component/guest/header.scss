@@ -35,7 +35,6 @@
 	transform: scale(1.1);
 }
 // ################ SECTION NAV : PARTIE DU HEADER DE DROITE @ BARRE NAV ###############
-
 .li_nav_guest {
   display: flex;
   justify-content: center
@@ -114,9 +113,9 @@ a.nav-link_guest::before {
         align-items: center; // Centrer les éléments
     }
     .img_logo_guest img[alt="La Biliothèque d'Hyrule"] {
-      order: -1; // Déplacez l'image au-dessus du texte
-      max-width: 90%; // Limitez la largeur de l'image
-      height: auto; // Garantissez une hauteur proportionnelle
+      order: -1; // Déplacer l'image au-dessus du texte
+      max-width: 90%; // Limiter la largeur de l'image
+      height: auto; // Garantir une hauteur proportionnelle
     }  
     .logo_text_guest {
       font-size: 1.0em;
@@ -130,7 +129,7 @@ a.nav-link_guest::before {
       display: none; // Masquer la navigation par défaut sur les écrans plus petits
       flex-direction: column; // Aligner les éléments en colonne
       position: absolute;
-      top: 9px; // Ajuster la position du menu selon votre conception
+      top: 9px; // Ajuster la position du menu
       left: 165px;
       width: 70%;
       font-size: 10px;
@@ -179,9 +178,9 @@ a.nav-link_guest::before {
     }
   
     .img_logo_guest img[alt="La Biliothèque d'Hyrule"] {
-      order: -1; // Déplacez l'image au-dessus du texte
-      max-width: 90%; // Limitez la largeur de l'image
-      height: auto; // Garantissez une hauteur proportionnelle
+      order: -1; // Déplacer l'image au-dessus du texte
+      max-width: 90%; // Limiter la largeur de l'image
+      height: auto; // Garantir une hauteur proportionnelle
     }
   
     .logo_text_guest {
@@ -198,9 +197,9 @@ a.nav-link_guest::before {
       display: none; // Masquer la navigation par défaut sur les écrans plus petits
       flex-direction: column; // Aligner les éléments en colonne
       position: absolute;
-      top: 110px; // Ajuster la position du menu selon votre conception
-      left:5px; // Ajuster la position du menu selon votre conception
-      width: 100%; // Ajuster la largeur du menu selon votre conception
+      top: 110px; // Ajuster la position du menu 
+      left:5px; // Ajuster la position du menu 
+      width: 100%; // Ajuster la largeur du menu 
       font-size: 10px;
       background-color: $background_color;
       border-radius: $border-radius-10;
